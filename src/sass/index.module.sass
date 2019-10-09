@@ -1,0 +1,64 @@
+@import "config/vars"
+
+.logoAnimation
+  width: 100%
+  height: 100vh
+  display: flex
+  padding: 0 128px
+  box-sizing: border-box
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  position: fixed
+  top: 152px
+  right: 0
+  left: 0
+  bottom: 0
+  opacity: 1
+  transition: opacity $transition-slow
+  z-index: -1
+  svg
+    stroke-dasharray: 15
+    stroke-dashoffset: 0
+    animation: dash 5s ease-in-out 1 forwards
+
+@keyframes dash
+  0%
+    stroke-dashoffset: 0
+    opacity: 0
+  25%
+    opacity: 1
+  100%
+    stroke-dashoffset: 500
+
+
+@media screen and (max-width: 800px)
+  .logoAnimation
+    opacity: 0
+    // svg
+      width: 100vw
+
+// .animationMaskAway
+  display: block
+  z-index: 100
+  position: fixed
+  background: pink
+  width: 100vw
+  height: 100vh
+
+section.header
+  padding-top: 128px
+  h1
+    margin: 0
+    padding: 0
+    max-width: 1000px
+
+.card
+  margin: 64px 0 0 0
+  background: $light
+  width: 100%
+  height: 489px
+
+@media screen and (max-width: 1000px)
+  section.header
+    padding-top: 88px

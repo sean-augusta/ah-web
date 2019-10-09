@@ -1,0 +1,29 @@
+@import "./normalize"
+@import "./typography"
+
+*
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  &::selection
+    background: $primary
+    color: $white
+
+body
+  padding-top: 152px
+
+section
+  width: 100%
+  padding: 0 128px
+  box-sizing: border-box
+
+@media screen and (max-width: 1500px)
+  section
+    padding: 0 64px
+
+@media screen and (max-width: 1250px)
+  section
+    padding: 0 32px
+
+@media screen and (max-width: 800px)
+  section
+    padding: 0 16px
