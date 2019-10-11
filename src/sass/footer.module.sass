@@ -1,0 +1,53 @@
+@import "config/vars"
+
+.footer
+  width: 100%
+  background: $light
+  margin-top: 80px
+  padding: 64px 128px 64px 128px
+  box-sizing: border-box
+  display: grid
+  grid-template-areas: "newsletter locations" "footerLinks footerLinks" "copyright copyright"
+.newsletter
+  grid-area: newsletter
+
+.locations
+  grid-area: locations
+
+.footerLinks
+  grid-area: footerLinks
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  margin: 64px 0 88px 0
+  ul
+    padding: 0
+    margin: 0
+    list-style: none
+    h6
+      padding: 0
+      margin: 0 0 16px 0
+      font: $h6-font
+      letter-spacing: $h6-letter-spacing
+    li
+      padding: 0
+      margin: 0
+      a
+        display: block
+        text-decoration: none
+        color: $color-black-emp-2
+        font: $subtitle1-font
+        letter-spacing: $subtitle1-letter-spacing
+        padding: 16px 0
+        &:hover
+          color: $primary
+
+
+.copyright
+  grid-area: copyright
+  p
+    font: $body1-font
+    letter-spacing: $body1-letter-spacing
+    margin: 0
+    padding: 0
+    color: $dark
+    opacity: 0.6

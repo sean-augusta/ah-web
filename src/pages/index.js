@@ -20,12 +20,6 @@ const IndexPage = () => (
       <div className={style.card}>
         This will be a big card.
       </div>
-      <div className={style.card}>
-        This will be a big card.
-      </div>
-      <div className={style.card}>
-        This will be a big card.
-      </div>
     </section>
   </Layout>
 )

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "augusta-hitech-website"
+    "production": "augusta-hitech-website",
+    "staging": "ah-website-staging"
   }
 }

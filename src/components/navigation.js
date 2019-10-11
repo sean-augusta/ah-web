@@ -31,7 +31,7 @@ function mobileNavToggle() {
 
 const Header = ({ siteTitle }) => (
   <nav className={style.navigation} id="nav">
-    <Link to="/" className={style.logo}>Augsuta HiTech
+    <Link to="/" className={style.logo}>{ siteTitle }
       <svg xmlns="http://www.w3.org/2000/svg" width="191.719" height="40" viewBox="0 0 191.719 40">
         <g transform="translate(-94 -100)">
           <g transform="translate(94 106.591)">

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Augusta HiTech`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Experts in blockchain technology solutions, product development, enterprise mobile application development, artificial intelligence, Internet of things for various domains.`,
+    author: `@Augusta_Hitech`,
   },
   plugins: [
     `gatsby-plugin-sass`,

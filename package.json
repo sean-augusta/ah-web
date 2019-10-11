@@ -33,11 +33,13 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "deploy-p": "gatsby clean && gatsby build && firebase use production && firebase deploy && firebase open hosting:site",
+    "deploy-s": "gatsby clean && gatsby build && firebase use staging && firebase deploy && firebase open hosting:site"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://www.augusta-coderepo.com/tfs/Augusta_projects/_git/AH-Web"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
