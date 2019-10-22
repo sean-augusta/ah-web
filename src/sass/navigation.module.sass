@@ -11,7 +11,15 @@
   flex-direction: row
   justify-content: space-between
   align-items: center
-  background: $white
+  &::before
+    content: ""
+    position: absolute
+    z-index: -1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: var(--color-base, $color-base)
   padding-top: 56px
   padding-right: 128px
   padding-bottom: 56px
@@ -22,14 +30,22 @@
 .logo
   font-size: 0
   max-height: 40px
+  svg
+    .base
+      fill: var(--color-base-alt, $color-base-alt)
+    .dot
+      fill: var(--color-primary, $color-primary)
   &:hover
     svg
       path
-        fill: $primary
+        .base
+          fill: var(--color-base-alt, $color-base-alt)
+        .dot
+          fill: var(--color-primary, $color-primary)
   &:active
     svg
       path
-        fill: darken($primary, 15%)
+        fill: darken($color-primary, 15%)
 
 .hamburgerOpen
   display: none
@@ -48,11 +64,11 @@
   transition: background $transition-medium
   svg
     path.path
-      fill: $dark
+      fill: var(--color-base-alt-1, $color-base-alt-1)
   &:hover
-    background: transparentize($black, 0.95)
+    background-color: transparentize($color-absolute-black, 0.95)
   &:active
-    background: transparentize($black, 0.9)
+    background-color: transparentize($color-absolute-black, 0.9)
 
 ul.navItems
   position: relative
@@ -71,6 +87,7 @@ ul.navItems
     flex-grow: 0
     height: 40px
     margin-left: 8px
+    color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 .hamburgerClose
   display: none
@@ -92,23 +109,31 @@ ul.navItems
   transition: background $transition-medium, top $transition-medium, right $transition-medium
   svg
     path.path
-      fill: $dark
+      fill: var(--color-base-alt-1, $color-base-alt-1)
   &:hover
-    background: transparentize($black, 0.95)
+    background-color: transparentize($color-absolute-black, 0.95)
   &:active
-    background: transparentize($black, 0.9)
+    background-color: transparentize($color-absolute-black, 0.9)
 
 .hamburgerClose.scrolledItem
   top: 16px
 
 .scrolled
-  box-shadow: 0 1px 0 0 transparentize($black, 0.84)
+  box-shadow: 0 1px 0 0 var(--color-base-alt-opacity, $color-base-alt-opacity)
   padding-top: 16px
   padding-right: 128px
   padding-bottom: 16px
   padding-left: 128px
-  // background: transparentize($white, 0.5)
-  // backdrop-filter: saturate(180%) blur(20px)
+  &::before
+    content: ""
+    position: absolute
+    z-index: -1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: var(--color-base-blur, $color-base-blur)
+    backdrop-filter: saturate(180%) blur(20px)
 
 
 @media screen and (max-width: 1500px)
@@ -142,8 +167,16 @@ ul.navItems
 
   ul.navItems.active
     display: flex
-    background: transparentize($white, 0.75)
-    backdrop-filter: saturate(180%) blur(20px)
+    &::before
+      content: ""
+      position: absolute
+      z-index: -1
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background-color: var(--color-base-blur, $color-base-blur)
+      backdrop-filter: saturate(180%) blur(20px)
 
 @media screen and (max-width: 800px)
   .navigation, .navigationscrolled

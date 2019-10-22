@@ -5,17 +5,17 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   &::selection
-    background: $primary
-    color: $white
+    background-color: var(--color-primary, $color-primary)
+    color: var(--color-base, $color-base)
 
 .resize-animation-stopper *
-  animation: none !important
+  // animation: none !important
   transition: none !important
 
 
 body
   padding-top: 152px
-  background: var(--color-white)
+  background-color: var(--color-base, $color-base)
 
 section
   width: 100%

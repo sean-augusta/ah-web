@@ -3,52 +3,53 @@
 h1, .h1
   font: $h1-font
   letter-spacing: $h1-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
+
 
 h2, .h2
   font: $h2-font
   letter-spacing: $h2-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 h3, .h3
   font: $h3-font
   letter-spacing: $h3-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 h4, .h4
   font: $h4-font
   letter-spacing: $h4-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 h5, .h5
   font: $h5-font
   letter-spacing: $h5-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 h6, .h6
   font: $h6-font
   letter-spacing: $h6-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 p, .body1
   font: $body1-font
   letter-spacing: $body1-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 .body2
   font: $body2-font
   letter-spacing: $body2-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 .subtitle1
   font: $subtitle1-font
   letter-spacing: $subtitle1-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 .subtitle2
   font: $subtitle2-font
   letter-spacing: $subtitle2-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 .btn
   font: $button-font
@@ -56,32 +57,32 @@ p, .body1
   padding: 10px 1rem
   border-radius: $button-border-radius
   text-decoration: none
-  color: $dark
+  color: var(--color-base-alt-1, $color-base-alt-1)
   transition: all $transition-fast
   user-select: none
   &:hover
-    color: $primary
-    background: transparentize($black, 0.95)
+    color: var(--color-primary, $color-primary)
+    background-color: transparentize($color-absolute-black, 0.95)
   &:active
-    background: transparentize($black, 0.9)
+    background-color: transparentize($color-absolute-black, 0.9)
 .btn-primary
-  color: $white
-  background: $primary
+  color: var(--color-absolute-white, $color-absolute-white)
+  background-color: var(--color-primary, $color-primary)
   &:hover
-    color: $white
-    background: darken($primary, 5%)
+    color: var(--color-absolute-white, $color-absolute-white)
+    background-color: darken($color-primary, 5%)
   &:active
-    background: darken($primary, 15%)
+    background-color: darken($color-primary, 15%)
 
 .caption
   font: $caption-font
   letter-spacing: $caption-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 .overline
   font: $overline-font
   letter-spacing: $overline-letter-spacing
-  color: transparentize($black, 0.13)
+  color: var(--color-typo-emp-1, $color-typo-emp-1)
 
 
 // Need to set up header reduced sizes

@@ -6,10 +6,10 @@ import style from "../sass/footer.module.sass"
 const Footer = ({ siteTitle }) => (
   <footer className={style.footer}>
     <div className={style.newsletter}>
-      Newsletter
+      <h6>Newsletter Pending</h6>
     </div>
     <div className={style.locations}>
-      Locations
+      <h6>Locations Pending</h6>
     </div>
     <div className={style.footerLinks}>
       <ul>

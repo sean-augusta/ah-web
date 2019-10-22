@@ -18,7 +18,7 @@ const IndexPage = () => (
     <section className={style.header}>
       <h1 className="h2">A Science and Technology company powered by Innovation.</h1>
       <div className={style.card}>
-        This will be a big card.
+        <p>This will be a big card.</p>
       </div>
     </section>
   </Layout>
