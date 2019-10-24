@@ -1,13 +1,19 @@
 @import "config/vars"
 
 .footer
+  position: relative
   width: 100%
   background-color: var(--color-base-1, $color-base-1)
   margin-top: 80px
-  padding: 64px 128px 64px 128px
+  padding-top: 64px
+  padding-right: 128px
+  padding-bottom: 64px
+  padding-left: 128px
   box-sizing: border-box
   display: grid
   grid-template-areas: "newsletter locations" "footerLinks footerLinks" "copyright copyright"
+  z-index: 99
+
 .newsletter
   grid-area: newsletter
 
@@ -17,18 +23,23 @@
 .footerLinks
   grid-area: footerLinks
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-column-gap: 8px
+  grid-row-gap: 64px
   margin: 64px 0 88px 0
   ul
     padding: 0
     margin: 0
     list-style: none
+    display: grid
+    align-content: start
+
     h6
       padding: 0
       margin: 0 0 16px 0
       font: $h6-font
       letter-spacing: $h6-letter-spacing
-      
+
     li
       padding: 0
       margin: 0
@@ -52,3 +63,24 @@
     padding: 0
     color: var(--color-base-alt-1, $color-base-alt-1)
     opacity: 0.6
+
+
+@media screen and (max-width: 1500px)
+  .footer
+    padding-right: 64px
+    padding-left: 64px
+
+@media screen and (max-width: 1250px)
+  .footer
+    padding-right: 32px
+    padding-left: 32px
+    
+@media screen and (max-width: 800px)
+  .footer
+    padding-right: 16px
+    padding-left: 16px
+  .footerLinks
+    justify-items: center
+    text-align: center
+  .copyright
+    text-align: center
