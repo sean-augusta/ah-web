@@ -18,7 +18,9 @@ const IndexPage = () => (
     <section className={style.header}>
       <h1 className="h2">A Science and Technology company powered by Innovation.</h1>
       <div className={style.card}>
-        <p>This will be a big card.</p>
+        <small className="overline">AH Blockchain</small>
+        <h2 className="h4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
       </div>
     </section>
   </Layout>
