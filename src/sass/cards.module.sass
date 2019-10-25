@@ -1,5 +1,13 @@
 @import "/config/vars"
 
+@keyframes fadeInAndUp
+  0%
+    transform: translateY(16px)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
+
 // cardInfo
 .cardInfo
   margin: 64px 0 0 0
@@ -10,6 +18,8 @@
   padding-bottom: 48px
   padding-left: 64px
   box-sizing: border-box
+  animation: fadeInAndUp 1s 0.5s forwards
+  opacity: 0
   h2
     max-width: 600px
     margin: 32px 0 16px 0
