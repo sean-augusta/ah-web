@@ -11,22 +11,81 @@
   padding-left: 128px
   box-sizing: border-box
   display: grid
+  grid-template-columns: 1fr 1.5fr
   grid-template-areas: "newsletter locations" "footerLinks footerLinks" "copyright copyright"
+  grid-column-gap: 8px
+  grid-row-gap: 64px
   z-index: 99
 
 .newsletter
   grid-area: newsletter
+  max-width: 414px
+  p
+    color: var(--color-typo-emp-1, $color-typo-emp-1)
+    margin: 16px 0 32px 0
+  form
+    margin: 0
+    padding: 0
+    display: flex
+    flex-direction: row
+    input
+      border: none
+      border-radius: 0
+      margin: 0
+      padding: 12px 16px 12px 16px
+      box-sizing: border-box
+      flex-grow: 2
+      background: var(--color-base-2, $color-base-2)
+      appearence: none
+      outline: none
+      color: var(--color-typo-emp-1, $color-typo-emp-1)
+      transition: background $transition-fast
+      &::placeholder
+        color: var(--color-typo-emp-3, $color-typo-emp-3)
+      &:hover
+        background: var(--color-primary-trans-0, $color-primary-trans-0)
+      &:focus
+        background: var(--color-primary-trans-1, $color-primary-trans-1)
+    button
+      border: none
+      margin: 0
+      appearence: none
+      outline: none
+      border-radius: 0
+      flex-grow: 0
+      background: var(--color-primary, $color-primary)
+      color: var(--color-absolute-white, $color-absolute-white)
+      &:hover, &:focus
+        background: darken($color-primary, 15%)
+        color: var(--color-absolute-white, $color-absolute-white)
 
 .locations
   grid-area: locations
+  max-width: 850px
+  .locationsWrapper
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    grid-column-gap: 32px
+    grid-row-gap: 32px
+    margin-top: 16px
+    small
+      color: var(--color-typo-emp-1, $color-typo-emp-1)
+    .address
+      display: block
+      color: var(--color-typo-emp-1, $color-typo-emp-1)
+      margin-top: 8px
+      text-decoration: none
+      &:hover
+        color: var(--color-primary, $color-primary)
+
 
 .footerLinks
   grid-area: footerLinks
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
   grid-column-gap: 8px
   grid-row-gap: 64px
-  margin: 64px 0 88px 0
+  margin: 0 0 24px 0
 
   ul
     padding: 0
@@ -52,7 +111,8 @@
         letter-spacing: $subtitle1-letter-spacing
         padding: 16px 0
         user-select: none
-        &:hover
+        outline: none
+        &:hover, &:focus
           color: var(--color-primary, $color-primary)
 
 .copyright
@@ -76,12 +136,21 @@
     padding-right: 32px
     padding-left: 32px
 
+@media screen and (max-width: 1140px)
+  .footer
+    grid-template-areas: "newsletter newsletter" "locations locations" "footerLinks footerLinks" "copyright copyright"
+
 @media screen and (max-width: 800px)
   .footer
     padding-right: 16px
     padding-left: 16px
+    grid-template-columns: 1fr
+    grid-template-areas: "newsletter" "locations" "footerLinks" "copyright"
+    justify-items: center
+    text-align: center
   .footerLinks
     justify-items: center
     text-align: center
+    grid-template-columns: 1fr
   .copyright
     text-align: center
