@@ -26,12 +26,6 @@ const IndexPage = () => (
       />
       <h2>Blockchain</h2>
       <CardInfo
-        overline={"Test"}
-        title={"This is a title Scott"}
-        body={"body"}
-        linkTo={"/test"}
-      />
-      <CardInfo
       />
       <h2>Artificial Intelligence</h2>
       <CardInfo

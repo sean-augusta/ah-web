@@ -33,17 +33,16 @@
   font-size: 0
   max-height: 40px
   svg
+    path, rect
+      transition: fill $transition-fast
     .base
       fill: var(--color-base-alt, $color-base-alt)
     .dot
       fill: var(--color-primary, $color-primary)
   &:hover
     svg
-      path
-        .base
-          fill: var(--color-base-alt, $color-base-alt)
-        .dot
-          fill: var(--color-primary, $color-primary)
+      path, rect
+        fill: var(--color-primary, $color-primary)
   &:active
     svg
       path, rect
