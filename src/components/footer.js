@@ -28,14 +28,6 @@ const Footer = ({ siteTitle }) => (
           <small className="overline">California, U.S.</small>
           <a className={style.address + " body2"} href="http://maps.google.com/?q=830%20Hillview%20Ct%20Suite%20270%20Milpitas%2C%20CA%2095035" target="_blank" rel="noopener noreferrer">830 Hillview Ct, Suite 270 <br/>Milpitas, CA 95035</a>
         </div>
-        <div className={style.location}>
-          <small className="overline">Coimbatore, India</small>
-          <a className={style.address + " body2"} href="https://maps.google.com" target="_blank" rel="noopener noreferrer">2650 North Military Trail, Suite 440 <br/>Boca Raton, FL 33431</a>
-        </div>
-        <div className={style.location}>
-          <small className="overline">Hyderabad, India</small>
-          <a className={style.address + " body2"} href="https://maps.google.com" target="_blank" rel="noopener noreferrer">2650 North Military Trail, Suite 440 <br/>Boca Raton, FL 33431</a>
-        </div>
       </div>
     </div>
     <div className={style.footerLinks}>

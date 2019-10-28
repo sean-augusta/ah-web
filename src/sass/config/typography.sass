@@ -96,6 +96,16 @@ p, .body1
   &:active
     background-color: darken($color-primary, 15%)
 
+.btn-primary-ghost
+  color: var(--color-primary, $color-primary)
+  outline: none
+  background-color: none
+  &:hover, &:focus
+    color: var(--color-primary, $color-primary)
+    background-color: var(--color-base-1, $color-base-1)
+  &:active
+    background-color: var(--color-base-2, $color-base-2)
+
 .caption
   font: $caption-font
   letter-spacing: $caption-letter-spacing

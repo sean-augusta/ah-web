@@ -22,13 +22,26 @@ const IndexPage = () => (
         overline={"AH Blockchain"}
         title={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"}
         body={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd."}
+        linkTo={"/"}
       />
+      <h2>Blockchain</h2>
+      <CardInfo
+        overline={"Test"}
+        title={"This is a title Scott"}
+        body={"body"}
+        linkTo={"/test"}
+      />
+      <CardInfo
+      />
+      <h2>Artificial Intelligence</h2>
+      <CardInfo
+      />
+      <h2>Robotic Process Automation</h2>
       <CardInfo
       />
       <CardInfo
       />
-      <CardInfo
-      />
+      <h2>C-Suite</h2>
       <CardInfo
       />
     </section>
