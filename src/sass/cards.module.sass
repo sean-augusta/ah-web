@@ -21,6 +21,36 @@
     margin: 0 0 0 -16px
 
 
+// cardInfoAndArticles
+.cardInfoAndArticles
+  margin: 64px 0 0 0
+  background-color: var(--color-base-2, $color-base-2)
+  width: 100%
+  padding-top: 48px
+  padding-right: 64px
+  padding-bottom: 48px
+  padding-left: 64px
+  box-sizing: border-box
+  display: grid
+  // grid-template-columns: 1fr 1fr
+  .info
+    a.h4
+      max-width: 600px
+      margin: 32px 0 4px 0
+      display: block
+    small.caption
+      margin: 0 0 16px 0
+
+    p
+      column-gap: 64px
+      margin: 16px 0 16px 0
+    a
+      margin: 0 0 0 -16px
+
+
+
+
+
 // Media Queries
 @media screen and (max-width: 1500px)
   .cardInfo
@@ -45,3 +75,9 @@
     padding-left: 0px
     p
       columns: auto 1
+  .cardInfoAndArticles
+    box-shadow: -16px 0 0 0 var(--color-base-2, $color-base-2), 16px 0 0 0 var(--color-base-2, $color-base-2)
+    padding-top: 32px
+    padding-right: 0px
+    padding-bottom: 32px
+    padding-left: 0px

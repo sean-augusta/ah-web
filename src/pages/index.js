@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "../sass/index.module.sass"
 import CardInfo from "../components/cards/cardInfo"
+import CardInfoAndArticles from "../components/cards/cardInfoAndArticles"
 
 const IndexPage = () => (
   <Layout>
@@ -25,7 +26,8 @@ const IndexPage = () => (
         linkTo={"/"}
       />
       <h2>Blockchain</h2>
-      <CardInfo
+      <CardInfoAndArticles
+        overline={"Blockchain"}
       />
       <h2>Artificial Intelligence</h2>
       <CardInfo

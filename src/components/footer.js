@@ -9,7 +9,8 @@ const Footer = ({ siteTitle }) => (
       <h3>Stay up to date</h3>
       <p className="body1">Sign up for our newsletter to get updates regarding our products, services, and other news.</p>
       <form>
-        <input className="subtitle1" type="email" placeholder="Enter your email"/>
+        <label htmlFor="email">Email</label>
+        <input className="subtitle1" type="email" name="email" id="email" placeholder="Enter your email"/>
         <button className="btn">Subscribe</button>
       </form>
     </div>

@@ -83,8 +83,10 @@ p, .body1
   &:hover, &:focus
     color: var(--color-primary, $color-primary)
     background-color: var(--color-base-1, $color-base-1)
+    text-decoration: none
   &:active
     background-color: var(--color-base-2, $color-base-2)
+    text-decoration: none
 
 .btn-primary
   color: var(--color-absolute-white, $color-absolute-white)
@@ -93,19 +95,23 @@ p, .body1
   &:hover, &:focus
     color: var(--color-absolute-white, $color-absolute-white)
     background-color: darken($color-primary, 5%)
+    text-decoration: none
   &:active
     background-color: darken($color-primary, 15%)
+    text-decoration: none
 
 .btn-primary-ghost
   color: var(--color-primary, $color-primary)
   outline: none
   background-color: none
+  text-decoration: none
   &:hover, &:focus
     color: var(--color-primary, $color-primary)
-    background-color: var(--color-base-1, $color-base-1)
+    background-color: transparent
     text-decoration: underline
   &:active
     background-color: var(--color-base-2, $color-base-2)
+    text-decoration: none
 
 .caption
   font: $caption-font
@@ -121,6 +127,12 @@ p, .body1
   text-transform: uppercase
   margin: 0
   padding: 0
+
+a
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    text-decoration-color: var(--color-primary, $color-primary)
 
 // Need to set up header reduced sizes
 @media screen and (max-width: 800px)
