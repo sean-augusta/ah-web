@@ -32,7 +32,7 @@ const Footer = ({ siteTitle }) => (
     </div>
     <div className={style.footerLinks}>
       <ul>
-        <h6>Services</h6>
+        <li><h6>Services</h6></li>
         <li><Link to="/">Innovation as a Service</Link></li>
         <li><Link to="/">Blockchain Engineering</Link></li>
         <li><Link to="/">Blockchain Testing</Link></li>
@@ -45,7 +45,7 @@ const Footer = ({ siteTitle }) => (
         <li><Link to="/">DevOps</Link></li>
       </ul>
       <ul>
-        <h6>Products</h6>
+        <li><h6>Products</h6></li>
         <li><Link to="/">AH Cancer Blockchain</Link></li>
         <li><Link to="/">AI Natural Conversation</Link></li>
         <li><Link to="/">ADA Solution</Link></li>
@@ -55,7 +55,7 @@ const Footer = ({ siteTitle }) => (
         <li><Link to="/">AH Blockchain Framework</Link></li>
       </ul>
       <ul>
-        <h6>Company</h6>
+        <li><h6>Company</h6></li>
         <li><Link to="/">Newsroom</Link></li>
         <li><Link to="/">Leadership</Link></li>
         <li><Link to="/">Careers</Link></li>
@@ -63,7 +63,7 @@ const Footer = ({ siteTitle }) => (
         <li><Link to="/">Events</Link></li>
       </ul>
       <ul>
-        <h6>Resources</h6>
+        <li><h6>Resources</h6></li>
         <li><Link to="/">Privacy Policy</Link></li>
         <li><Link to="/">Sitemap</Link></li>
         <li><Link to="/">Contact</Link></li>
@@ -73,7 +73,7 @@ const Footer = ({ siteTitle }) => (
         <li><Link to="/">Partner Program</Link></li>
       </ul>
       <ul>
-        <h6>Social</h6>
+        <li><h6>Social</h6></li>
         <li><a href="https://www.linkedin.com/company/augusta-hitech-soft-solutions/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a href="https://www.facebook.com/augustahitech.us/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
         <li><a href="https://twitter.com/Augusta_Hitech" target="_blank" rel="noopener noreferrer">Twitter</a></li>
