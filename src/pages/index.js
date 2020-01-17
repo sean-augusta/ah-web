@@ -20,9 +20,9 @@ const IndexPage = () => (
     <section className={style.header}>
       <h1 className="h2">A Science and Technology company powered by Innovation.</h1>
       <CardInfo
-        overline={"AH Blockchain"}
-        title={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"}
-        body={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd."}
+        overline={"AH Labs"}
+        title={"There's a lot of NOISE around innovation leading to disruption."}
+        body={"There are challenges to adopting emerging technologies, but creates opportunities. What is blockchain? Do we have the right use case for blockchain? How will AI transform and reinvent our business? How do we assess the trends and shifts in emerging technologies? Find out how we can help turn noise into measurable outcomes. Learn More."}
         linkTo={"/"}
       />
       <h2>Blockchain</h2>
