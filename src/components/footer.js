@@ -4,7 +4,7 @@ import React from "react"
 import style from "../sass/footer.module.sass"
 
 const Footer = ({ siteTitle }) => (
-  <footer className={style.footer}>
+  <footer className={style.footer} id="footer">
     <div className={style.newsletter}>
       <h3>Stay up to date</h3>
       <p className="body1">Sign up for our newsletter to get updates regarding our products, services, and other news.</p>
@@ -27,6 +27,14 @@ const Footer = ({ siteTitle }) => (
         </div>
         <div className={style.location}>
           <small className="overline">California, U.S.</small>
+          <a className={style.address + " body2"} href="http://maps.google.com/?q=830%20Hillview%20Ct%20Suite%20270%20Milpitas%2C%20CA%2095035" target="_blank" rel="noopener noreferrer">830 Hillview Ct, Suite 270 <br/>Milpitas, CA 95035</a>
+        </div>
+        <div className={style.location}>
+          <small className="overline">Coimbatore, India</small>
+          <a className={style.address + " body2"} href="http://maps.google.com/?q=830%20Hillview%20Ct%20Suite%20270%20Milpitas%2C%20CA%2095035" target="_blank" rel="noopener noreferrer">830 Hillview Ct, Suite 270 <br/>Milpitas, CA 95035</a>
+        </div>
+        <div className={style.location}>
+          <small className="overline">Hyderabad, India</small>
           <a className={style.address + " body2"} href="http://maps.google.com/?q=830%20Hillview%20Ct%20Suite%20270%20Milpitas%2C%20CA%2095035" target="_blank" rel="noopener noreferrer">830 Hillview Ct, Suite 270 <br/>Milpitas, CA 95035</a>
         </div>
       </div>

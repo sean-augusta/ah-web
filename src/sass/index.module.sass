@@ -34,30 +34,71 @@
 
 section.header
   padding-top: 128px
-  &::before
-    content: ""
-    display: block
-    position: absolute
-    transform: translateY(calc(100vh - 128px))
-    background: linear-gradient(rgba(255,255,255,0) 0px, var(--color-base, $color-base) 128px)
-    top: 0px
-    right: 0px
-    bottom: 0px
-    left: 0px
+  position: relative
+  height: calc(100vh - 128px - env(safe-area-inset-bottom, 0px))
+  display: grid
+  grid-template-rows: 1fr 100px
+  padding-bottom: env(safe-area-inset-bottom, 0px)
+ 
+  .heroImg
+    position: absolute !important
+    top: -152px
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: calc(100% + 152px)
     z-index: -1
+  .overlay
+    position: absolute
+    top: -152px
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: calc(100% + 152px)
+    background: rgba(0,0,0,0.16)
+    z-index: 2
+  .headerContent
+    z-index: 3
+    h1
+      margin: 0
+      padding: 0
+      max-width: 1000px
+      color: var(--color-absolute-white, $color-absolute-white)
+      font-weight: 600
+    h2
+      margin: 32px 0 0 0
+      max-width: 450px
+      color: var(--color-absolute-white, $color-absolute-white)
+    .cta
+      display: inline-block
+      color: var(--color-primary, $color-primary)
+      background: var(--color-absolute-white, $color-absolute-white)
+      padding: 12px 24px
+      font-size: 25px
+      font-weight: 700
+      text-transform: capitalize
+      margin: 48px 0 0 0
+  .scroll
+    svg
+      fill: var(--color-absolute-white, $color-absolute-white)
+
+  section.homePageContent
+  padding-top: 128px
   h1
     margin: 0
     padding: 0
     max-width: 1000px
-  h2
+  .sectionTitle
     margin-top: 256px
 
 @media screen and (max-width: 1000px)
   section.header
-    padding-top: 88px
+    padding-top: 32px
 
 @media screen and (max-width: 800px)
-  section.header
+  section.homePageContent
     h2
       margin-top: 128px
   .logoAnimation

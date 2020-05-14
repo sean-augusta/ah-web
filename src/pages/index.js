@@ -1,47 +1,86 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "../sass/index.module.sass"
 import CardInfo from "../components/cards/cardInfo"
 import CardInfoAndArticles from "../components/cards/cardInfoAndArticles"
+import { RichText } from 'prismic-reactjs'
+import Img from "gatsby-image"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) =>{
+  const page = data.prismic.allHomes.edges.slice(0,1).pop();
+  if(!page) return null;
+  return (
   <Layout>
-    <SEO title="Home" />
-    <div className={style.logoAnimation}>
-      <svg height="1060.972" viewBox="0 0 1665.348 1060.972" width="1665.348" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" opacity=".25" strokeWidth="1" transform="translate(.5 .5)">
-          <path d="m290.129 2061.2q-34.868 41.892-86.007 41.836-46.519 0-79.03-32.534-32.585-32.524-32.544-79.036 0-41.845 23.246-67.37l564.852-760.162q39.505-53.435 104.605-87.167 65.05-33.675 139.471-33.7a301.845 301.845 0 0 1 132.5 30.221q62.767 30.216 102.276 83.664l564.86 755.477a160.634 160.634 0 0 1 23.247 36.037 100.162 100.162 0 0 1 9.291 43q0 46.573-32.538 79.036-32.585 32.572-79.038 32.534-55.778 0-88.326-44.127l-541.615-722.972a510.2 510.2 0 0 0 -40.679-40.665q-24.4-22.067-49.978-22.053-25.6 0-49.978 22.053-24.4 22.118-38.35 40.665z" transform="translate(-92.547 -1043.063)"/>
-          <path d="m169.354 1261.393q0-60.419 41.843-102.276t102.275-41.84q60.415 0 102.278 41.84 41.841 41.85 41.843 102.276 0 60.48-41.843 102.289-41.85 41.844-102.277 41.818-60.482 0-102.275-41.821-41.842-41.849-41.843-102.289" transform="translate(518.7 -452.462)"/>
-        </g>
-      </svg>
-    </div>
-    <div className={style.animationMaskAway}></div>
+    <SEO title={RichText.asText(page.node.page_name)} />
     <section className={style.header}>
-      <h1 className="h2">A Science and Technology company powered by Innovation.</h1>
+      <div className={style.headerContent}>
+        <h1 className="h2">{RichText.asText(page.node.title)}</h1>
+        <h2 className="h6">{RichText.asText(page.node.subtitle)}</h2>
+        <a className={style.cta} href="#footer">Contact us</a>
+      </div>
+      <div className={style.scroll}>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
+        </svg>
+      </div>
+      <div className={style.overlay}></div>
+      <Img className={style.heroImg} fluid={page.node.hero_imageSharp.childImageSharp.fluid} alt={page.node.hero_image.alt}/>
+    </section>
+
+
+    <section className={style.homePageContent}>
       <CardInfo
         overline={"AH Labs"}
         title={"There's a lot of NOISE around innovation leading to disruption."}
         body={"There are challenges to adopting emerging technologies, but creates opportunities. What is blockchain? Do we have the right use case for blockchain? How will AI transform and reinvent our business? How do we assess the trends and shifts in emerging technologies? Find out how we can help turn noise into measurable outcomes. Learn More."}
         linkTo={"/"}
       />
-      <h2>Blockchain</h2>
+      <h2 className={style.sectionTitle}>Blockchain</h2>
       <CardInfoAndArticles
         overline={"Blockchain"}
       />
-      <h2>Artificial Intelligence</h2>
+      <h2 className={style.sectionTitle}>Artificial Intelligence</h2>
       <CardInfo
       />
-      <h2>Robotic Process Automation</h2>
+      <h2 className={style.sectionTitle}>Robotic Process Automation</h2>
       <CardInfo
       />
       <CardInfo
       />
-      <h2>C-Suite</h2>
+      <h2 className={style.sectionTitle}>C-Suite</h2>
       <CardInfo
       />
     </section>
+
   </Layout>
 )
+}
 
 export default IndexPage
+
+export const query = graphql`
+  {
+    prismic {
+      allHomes {
+        edges {
+          node {
+            page_name
+            title
+            subtitle
+            hero_image
+            hero_imageSharp {
+              childImageSharp {
+                fluid  {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

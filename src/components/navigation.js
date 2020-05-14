@@ -60,12 +60,12 @@ const Header = ({ siteTitle }) => (
           <path d="M0 0h24v24H0z" fill="none"/>
         </svg>
       </button>
-      <li><Link to="/" className="btn">AH Labs</Link></li>
-      <li><Link to="/" className="btn">AH Startups</Link></li>
+      <li><Link to="/" className="btn">Innovation</Link></li>
       <li><Link to="/" className="btn">Products</Link></li>
       <li><Link to="/" className="btn">Services</Link></li>
-      <li><Link to="/" className="btn">Company</Link></li>
-      <li><Link to="/" className="btn btn-primary">Contact Us</Link></li>
+      <li><Link to="/" className="btn">Industries</Link></li>
+      <li><Link to="/" className="btn">More...</Link></li>
+      {/* <li><Link to="/" className="btn btn-primary">Contact Us</Link></li> */}
     </ul>
   </nav>
 )
