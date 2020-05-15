@@ -1,13 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Navigation from "../components/navigationOnImage"
+import Layout from "../components/layouts/layout"
+import Navigation from "../components/navigation/navigationOnImage"
 import SEO from "../components/seo"
 import style from "../sass/index.module.sass"
-import CardInfo from "../components/cards/cardInfo"
-import CardInfoAndArticles from "../components/cards/cardInfoAndArticles"
+// import CardInfo from "../components/cards/cardInfo"
+// import CardInfoAndArticles from "../components/cards/cardInfoAndArticles"
 import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
+import ContactFormInline from "../components/contact_form"
 
 const IndexPage = ({ data }) =>{
   const page = data.prismic.allHomes.edges.slice(0,1).pop();
@@ -31,9 +32,7 @@ const IndexPage = ({ data }) =>{
       <div className={style.overlay}></div>
       <Img className={style.heroImg} fluid={page.node.hero_imageSharp.childImageSharp.fluid} alt={page.node.hero_image.alt}/>
     </section>
-
-
-    <section className={style.homePageContent}>
+    {/* <section className={style.homePageContent}>
       <CardInfo
         overline={"AH Labs"}
         title={"There's a lot of NOISE around innovation leading to disruption."}
@@ -55,8 +54,8 @@ const IndexPage = ({ data }) =>{
       <h2 className={style.sectionTitle}>C-Suite</h2>
       <CardInfo
       />
-    </section>
-
+    </section> */}
+    <ContactFormInline />
   </Layout>
 )
 }

@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import style from "../sass/footer.module.sass"
+import style from "../../sass/footer.module.sass"
 
 const Footer = ({ siteTitle }) => (
   <footer className={style.footer} id="footer">
@@ -91,7 +91,7 @@ const Footer = ({ siteTitle }) => (
       </ul>
     </div>
     <div className={style.copyright}>
-      <p>&copy; 2019 Augusta HiTech | by Augusta Design</p>
+      <p>&copy; 2020 Augusta HiTech | by Augusta Design</p>
     </div>
   </footer>
 )

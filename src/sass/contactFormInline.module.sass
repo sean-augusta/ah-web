@@ -1,0 +1,78 @@
+@import "./config/vars"
+
+.formContainer
+  background: var(--color-primary, $color-primary)
+  background: linear-gradient(145deg, var(--color-linear-gradient-start, $color-linear-gradient-start) 0%, var(--color-linear-gradient-end, $color-linear-gradient-end) 100%)
+  margin-bottom: -80px
+  padding: 128px 16px 160px 16px
+  display: grid
+  grid-template-columns: 1fr
+  align-content: center
+  align-items: center
+  justify-content: center
+  justify-items: center
+  .formDesciption
+    max-width: 400px
+    color: var(--color-absolute-white, $color-absolute-white)
+    p, h3
+      color: inherit
+      text-align: center
+    p
+      opacity: 0.6
+  form
+    margin: 32px 0 0 0
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 24px
+    width: 100%
+    max-width: 800px
+    .inputWrapper
+      display: grid
+      grid-template-columns: 1fr
+      grid-gap: 4px
+      color: var(--color-absolute-white, $color-absolute-white)
+      label, input, textarea
+        color: inherit
+      input, textarea
+        box-sizing: border-box
+        overflow: visible
+        padding: 16px
+        background: rgba(255, 255, 255, 0.16)
+        border: none
+        outline: none
+        border-bottom: 1px solid var(--color-absolute-white, $color-absolute-white)
+        caret-color: var(--color-absolute-white, $color-absolute-white)
+        transition: all 0.2s ease-in-out
+        appearance: none
+        border-radius: 0px
+        font-size: 1rem
+        font-weight: regular
+        line-height: normal
+        &:hover
+          background: rgba(255, 255, 255, 0.24)
+        &:active
+          background: rgba(255, 255, 255, 0.16)
+        &::placeholder
+          color: var(--color-absolute-white, $color-absolute-white)
+          opacity: 0.6
+          font-size: 1rem
+          font-weight: regular
+          line-height: normal
+    button
+      display: inline
+      padding: 16px 24px
+      background: var(--color-absolute-white, $color-absolute-white)
+      color: var(--color-primary, $color-primary)
+      font-size: 1rem
+      font-weight: bold
+      appearance: none
+      border-radius: 0px
+      border: none
+      transition: all 0.2s ease-in-out
+      cursor: pointer
+      &:hover
+        opacity: 0.87
+
+@media screen and (max-width: 800px)
+  .formContainer
+    padding: 64px 16px 80px 16px
