@@ -16,7 +16,12 @@ const IndexPage = ({ data }) =>{
   return (
   <Layout>
     <Navigation />
-    <SEO title={RichText.asText(page.node.page_name)} />
+    <SEO 
+      title={page.node.seo_title}
+      description={page.node.seo_description}
+      keywords={page.node.seo_keywords}
+      ogImage={page.node.og_image.url}
+    />
     <section className={style.header}>
       <div className={style.headerContent}>
         <h1 className="h2">{RichText.asText(page.node.title)}</h1>
@@ -68,6 +73,10 @@ export const query = graphql`
       allHomes {
         edges {
           node {
+            seo_title
+            seo_description
+            seo_keywords
+            og_image
             page_name
             title
             subtitle
