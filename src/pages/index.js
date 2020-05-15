@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Navigation from "../components/navigation"
+import Navigation from "../components/navigationOnImage"
 import SEO from "../components/seo"
 import style from "../sass/index.module.sass"
 import CardInfo from "../components/cards/cardInfo"

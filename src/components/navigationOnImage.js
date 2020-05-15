@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import style from "../sass/navigation.module.sass"
+import style from "../sass/navigationOnImage.module.sass"
 import { useStaticQuery, graphql } from "gatsby"
 import NavItems from "./navItems"
 
@@ -10,13 +10,13 @@ if (typeof document !== 'undefined') {
   window.onscroll = function() {updateScroll()};
   function updateScroll() {
     const scrollPosition = window.pageYOffset;
-    const nav = document.getElementById('nav');
+    const nav = document.getElementById('navOnImage');
     const close = document.getElementById('hamburgerClose');
     if (scrollPosition > 50) {
-      nav.className = style.navigation + ' ' + style.scrolled;
+      nav.className = style.navigationOnImage + ' ' + style.scrolled;
       close.className = style.hamburgerClose + ' ' + style.scrolledItem;
     } else {
-      nav.className = style.navigation;
+      nav.className = style.navigationOnImage;
       close.className = style.hamburgerClose;
     }
   }
@@ -33,7 +33,7 @@ function mobileNavToggle() {
 
 const Header = () => {
   const data = useStaticQuery(graphql`
-    query NavQuery {
+    query NavOnImageQuery {
       site {
         siteMetadata {
           title
@@ -43,7 +43,7 @@ const Header = () => {
   `);
 
   return (
-  <nav className={style.navigation} id="nav">
+  <nav className={style.navigationOnImage} id="navOnImage">
     <Link to="/" className={style.logo}>{ data.site.siteMetadata.title }
       <svg xmlns="http://www.w3.org/2000/svg" width="191.719" height="40" viewBox="0 0 191.719 40">
         <g transform="translate(-94 -100)">
