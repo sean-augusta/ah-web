@@ -14,7 +14,7 @@ const IndexPage = ({ data }) =>{
   if(!page) return null;
   return (
   <Layout>
-    <Navigation className="onImage"/>
+    <Navigation />
     <SEO title={RichText.asText(page.node.page_name)} />
     <section className={style.header}>
       <div className={style.headerContent}>
