@@ -29,6 +29,26 @@
   padding-left: 128px
   transition: box-shadow $transition-medium, padding-top $transition-medium, padding-bottom $transition-medium
 
+.onImage
+  .logo
+  font-size: 0
+  max-height: 20px
+  svg
+    path, rect
+      transition: fill $transition-fast
+    .base
+      fill: var(--color-absolute-white, $color-absolute-white)
+    .dot
+      fill: var(--color-primary, $color-primary)
+  &:hover
+    svg
+      path, rect
+        fill: var(--color-primary, $color-primary)
+  &:active
+    svg
+      path, rect
+        fill: darken($color-primary, 15%)
+
 
 .logo
   font-size: 0

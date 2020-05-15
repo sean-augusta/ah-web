@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import style from "../sass/navigation.module.sass"
+import { useStaticQuery, graphql } from "gatsby"
 
 // Optimize
 if (typeof document !== 'undefined') {
@@ -29,9 +30,20 @@ function mobileNavToggle() {
   }
 }
 
-const Header = ({ siteTitle }) => (
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query NavQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  return (
   <nav className={style.navigation} id="nav">
-    <Link to="/" className={style.logo}>{ siteTitle }
+    <Link to="/" className={style.logo}>{ data.site.siteMetadata.title }
       <svg xmlns="http://www.w3.org/2000/svg" width="191.719" height="40" viewBox="0 0 191.719 40">
         <g transform="translate(-94 -100)">
           <g transform="translate(94 106.591)">
@@ -68,7 +80,7 @@ const Header = ({ siteTitle }) => (
       {/* <li><Link to="/" className="btn btn-primary">Contact Us</Link></li> */}
     </ul>
   </nav>
-)
+)}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -79,3 +91,4 @@ Header.defaultProps = {
 }
 
 export default Header
+
