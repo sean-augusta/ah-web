@@ -42,10 +42,10 @@ const FullWidthSection = ({image, imageAlt, title, body, linkTo, type}) => {
 }
 
 FullWidthSection.propTypes = {
-  image: PropTypes.isRequired,
-  imageAlt: PropTypes.isRequired,
+  image: PropTypes.object.isRequired,
+  imageAlt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+  body: PropTypes.array.isRequired,
   linkTo: PropTypes.string,
   type: PropTypes.string.isRequired,
 }

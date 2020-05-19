@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layouts/layout"
-import Navigation from "../components/navigation/navigationOnImage"
+import Navigation from "../components/navigation/navigation"
 import SEO from "../components/seo"
 import style from "../sass/index.module.sass"
 // import CardInfo from "../components/cards/cardInfo"
@@ -16,7 +16,7 @@ const IndexPage = ({ data }) =>{
   if(!page) return null;
   return (
   <Layout>
-    <Navigation />
+    <Navigation onImage={true}/>
     <SEO 
       title={page.node.seo_title}
       description={page.node.seo_description}
