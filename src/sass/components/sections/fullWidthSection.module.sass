@@ -12,6 +12,7 @@
   z-index: 0
   max-width: 1080px
   margin: auto
+  margin-top: 64px
   &::before
     content: ""
     position: absolute
@@ -26,59 +27,83 @@
     z-index: 2
     margin-right: 76px
     grid-area: body
+    // margin-top: 64px
+    // margin-bottom: 64px
     h3
       margin-top: 32px
       position: relative
-    span.divider
-      display: block
-      position: relative
-      width: 75px
-      height: 5px
-      background: var(--color-primary, $color-primary)
-      margin: 8px 0 16px 0
     p
       margin: 32px 0 64px 0
     a
       margin-left: -1rem
+    h3, p
+      word-break: break-word
+
   .imageWrapper
     position: relative
-    // background: purple
     width: 100%
     height: 100%
     grid-area: image
-    // display: flex
-    // justify-content: center
-    // align-items: center
-    .imageTri, .imageTriDuplicate
+    z-index: 2
+    transform: translateY(-64px)
+    .image, .imageDuplicate
       padding-top: 100%
       width: 100%
       height: 0
       flex-shrink: 0
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
-      shape-outside: polygon(50% 0%, 0% 100%, 100% 100%)
       z-index: 3
       transform: translateY(-20px)
-    .imageTri
+    .image
       top: 50%
       left: 50%
       transform: translate(-50%,calc(-50% - 20px))
-    .imageTriDuplicate
+    .imageDuplicate
       position: absolute !important
       top: 50%
       left: 50%
-      // transform: translate(-60px, 20px)
       transform: translate(calc(-50% - 60px),calc(-50% + 20px))
       z-index: 2
       opacity: 0.5
+    .triangle
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+      shape-outside: polygon(50% 0%, 0% 100%, 100% 100%)
+    .rectangle
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+      shape-outside: polygon(50% 0%, 0% 100%, 100% 100%)
+
+.sectionFullWidth.triangle
+  .imageWrapper
+    .image, .imageDuplicate
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+      shape-outside: polygon(50% 0%, 0% 100%, 100% 100%)
+
+.sectionFullWidth.rectangle
+  grid-template-areas: "image body"
+  .sectionBody
+    margin-right: 0
+    margin-left: 64px
+  .imageWrapper
+    .image, .imageDuplicate
+      padding-top: 66.66%
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+      shape-outside: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+
+
 
 @media screen and ( max-width: 1000px )
   .sectionFullWidth
     grid-template-columns: 1.5fr 1fr
+    .imageWrapper
+      transform: translateY(0)
+  .sectionFullWidth.rectangle
+    grid-template-columns: 1fr 1.5fr
+    .sectionBody
+      margin-left: 32px
   
 
 
 @media screen and ( max-width: 800px )
-  .sectionFullWidth
+  .sectionFullWidth, .sectionFullWidth.rectangle
     grid-gap: 32px
     grid-template-areas: "image" "body"
     grid-template-columns: 1fr
@@ -86,19 +111,16 @@
       top: 128px
     .imageWrapper
       max-width: 500px
-      // padding: 0 32px
-      // box-sizing: margin-box
       margin: auto
-      .imageTri
+      .image
         transform: translate(-50%,calc(-50% - 10px))
-      .imageTriDuplicate
+      .imageDuplicate
         transform: translate(calc(-50% - 30px),calc(-50% + 10px))
     .sectionBody
       margin-right: 0
+      margin-left: 0
       h3
         margin-top: 32px
-      span.divider
-        margin: 8px 0 16px 0
       p
         margin: 16px 0 32px 0
       a
@@ -111,7 +133,9 @@
       top: 128px
     .imageWrapper
       margin: 0px 24px 0px 8px
-      .imageTri
+      .image
         transform: translate(-50%,calc(-50% - 5px))
-      .imageTriDuplicate
+      .imageDuplicate
         transform: translate(calc(-50% - 15px),calc(-50% + 5px))
+
+

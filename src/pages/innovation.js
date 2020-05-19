@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layouts/layout"
-import Navigation from "../components/navigation/navigationOnImage"
+import Navigation from "../components/navigation/navigation"
 import SEO from "../components/seo"
 import style from "../sass/index.module.sass"
 // import CardInfo from "../components/cards/cardInfo"
@@ -11,7 +11,7 @@ import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
 import ContactFormInline from "../components/contact_form"
 
-const IndexPage = ({ data }) =>{
+const Innovation = ({ data }) =>{
   const page = data.prismic.allHomes.edges.slice(0,1).pop();
   if(!page) return null;
   return (
@@ -40,36 +40,26 @@ const IndexPage = ({ data }) =>{
     </section>
     <section className={style.homePageContent}>
     {page.node.full_width_sections.map(function (full_width_section, index) {
-      return(
-        <FullWidthSection
-          key={index}
-          type={full_width_section.full_width_section_type}
-          title={full_width_section.full_width_section_title}
-          body={full_width_section.full_width_section_body}
-          image={full_width_section.full_width_section_imageSharp.childImageSharp.fluid}
-          imageAlt={full_width_section.full_width_section_image.alt}
-          linkTo={full_width_section.full_width_section_link}
-        >
-        </FullWidthSection>
-      )
-    })}
-    <section className={style.ourServicesApplied}>
-      <div>
-        <h3 className={'h4'}>{page.node.illustration_header}</h3>
-        <span className={'headerUnderline'}></span>
-      </div>
-      <div className={style.illustrationWrapper}>
-        <Img fluid={page.node.illustration_left_imageSharp.childImageSharp.fluid} alt={page.node.illustration_left_image.alt}/>
-        <Img fluid={page.node.illustration_right_imageSharp.childImageSharp.fluid} alt={page.node.illustration_right_image.alt}/>
-      </div>
-    </section>
+        return(
+          <FullWidthSection
+            key={index}
+            type={full_width_section.full_width_section_type}
+            title={full_width_section.full_width_section_title}
+            body={full_width_section.full_width_section_body}
+            image={full_width_section.full_width_section_imageSharp.childImageSharp.fluid}
+            imageAlt={full_width_section.full_width_section_image.alt}
+            linkTo={'/innovation'}
+          >
+          </FullWidthSection>
+        )
+      })}
     </section>
     <ContactFormInline />
   </Layout>
 )
 }
 
-export default IndexPage
+export default Innovation
 
 export const query = graphql`
   {
@@ -93,6 +83,7 @@ export const query = graphql`
               }
             }
             full_width_sections {
+              full_width_section_type
               full_width_section_image
               full_width_section_imageSharp {
                 childImageSharp {
@@ -103,25 +94,6 @@ export const query = graphql`
               }
               full_width_section_title
               full_width_section_body
-              full_width_section_type
-              full_width_section_link
-            }
-            illustration_header
-            illustration_left_image
-            illustration_left_imageSharp {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            illustration_right_image
-            illustration_right_imageSharp {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
             }
           }
         }
