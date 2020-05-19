@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import openGraphImageDefault from "../images/ogImage.png"
 
 function SEO({ description, lang, meta, title, ogImage, keywords }) {
   const { site } = useStaticQuery(
@@ -26,6 +27,7 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const openGraphImage = ogImage || openGraphImageDefault
 
   return (
     <Helmet
@@ -45,7 +47,7 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.title}`,
         },
         {
           property: `og:description`,
@@ -65,7 +67,7 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
         },
         {
           property: `og:image`,
-          content: ogImage,
+          content: openGraphImage,
         },
         {
           name: `twitter:card`,
@@ -73,7 +75,7 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
         },
         {
           name: `twitter:image`,
-          content: ogImage,
+          content: openGraphImage,
         },
         {
           name: `twitter:creator`,
@@ -81,7 +83,7 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.title}`,
         },
         {
           name: `twitter:description`,
@@ -96,7 +98,7 @@ SEO.defaultProps = {
   description: ``,
   keywords: ``,
   lang: `en-US`,
-  ogImage: ``,
+  ogImage: openGraphImageDefault,
   meta: [],
 }
 

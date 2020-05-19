@@ -20,8 +20,8 @@ const IndexPage = ({ data }) =>{
     <SEO 
       title={page.node.seo_title}
       description={page.node.seo_description}
-      keywords={page.node.seo_keywords}
-      ogImage={page.node.og_image.url}
+      keywords={page.node.seo_keywords ? page.node.seo_keywords : null}
+      ogImage={page.node.og_image ? page.node.og_image.url : null}
     />
     <section className={style.header}>
       <div className={style.headerContent}>

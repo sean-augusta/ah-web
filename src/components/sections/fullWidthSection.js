@@ -10,7 +10,7 @@ const FullWidthSection = ({image, imageAlt, title, body, linkTo, type}) => {
     return (
       <div className={style.sectionFullWidth + ' ' + style.triangle}>
         <div className={style.sectionBody}>
-          <h3 className="h4">{title} (Tri)</h3>
+          <h3 className="h4">{title}</h3>
           <span className={'headerUnderline'}></span>
           {RichText.render(body)}
           {linkTo ? <Link to={linkTo} className="btn btn-primary-ghost">Read More &#x2794;</Link> : null}
@@ -25,7 +25,7 @@ const FullWidthSection = ({image, imageAlt, title, body, linkTo, type}) => {
     return (
       <div className={style.sectionFullWidth + ' ' + style.rectangle}>
         <div className={style.sectionBody}>
-          <h3 className="h4">{title} (Rect)</h3>
+          <h3 className="h4">{title}</h3>
           <span className={'headerUnderline'}></span>
           {RichText.render(body)}
           {linkTo ? <Link to={linkTo} className="btn btn-primary-ghost">Read More &#x2794;</Link> : null}
@@ -51,7 +51,7 @@ FullWidthSection.propTypes = {
 }
 
 FullWidthSection.defaultProps = {
-  type: 'Triangle',
+  type: `Triangle`,
   title: `This is the card title.`,
   body: `This is the default body of the prop. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.`,
 }
