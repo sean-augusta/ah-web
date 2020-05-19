@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import style from "../../sass/navigation.module.sass"
+import style from "../../sass/components/navigation/navigation.module.sass"
 
 
 const NavItems = () => (

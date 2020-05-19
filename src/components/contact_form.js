@@ -1,5 +1,5 @@
 import React from "react"
-import style from "../sass/contactFormInline.module.sass"
+import style from "../sass/components/contactFormInline.module.sass"
 
 
 const ContactFormInline = () => {

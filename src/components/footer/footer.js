@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import style from "../../sass/footer.module.sass"
+import style from "../../sass/components/footer/footer.module.sass"
 
 const Footer = ({ siteTitle }) => (
   <footer className={style.footer} id="footer">

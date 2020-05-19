@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import style from "../sass/index.module.sass"
 // import CardInfo from "../components/cards/cardInfo"
 // import CardInfoAndArticles from "../components/cards/cardInfoAndArticles"
+import FullWidthSection from "../components/sections/fullWidthSection"
 import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
 import ContactFormInline from "../components/contact_form"
@@ -37,29 +38,14 @@ const IndexPage = ({ data }) =>{
       <div className={style.overlay}></div>
       <Img className={style.heroImg} fluid={page.node.hero_imageSharp.childImageSharp.fluid} alt={page.node.hero_image.alt}/>
     </section>
-    {/* <section className={style.homePageContent}>
-      <CardInfo
-        overline={"AH Labs"}
-        title={"There's a lot of NOISE around innovation leading to disruption."}
-        body={"There are challenges to adopting emerging technologies, but creates opportunities. What is blockchain? Do we have the right use case for blockchain? How will AI transform and reinvent our business? How do we assess the trends and shifts in emerging technologies? Find out how we can help turn noise into measurable outcomes. Learn More."}
-        linkTo={"/"}
-      />
-      <h2 className={style.sectionTitle}>Blockchain</h2>
-      <CardInfoAndArticles
-        overline={"Blockchain"}
-      />
-      <h2 className={style.sectionTitle}>Artificial Intelligence</h2>
-      <CardInfo
-      />
-      <h2 className={style.sectionTitle}>Robotic Process Automation</h2>
-      <CardInfo
-      />
-      <CardInfo
-      />
-      <h2 className={style.sectionTitle}>C-Suite</h2>
-      <CardInfo
-      />
-    </section> */}
+    <section className={style.homePageContent}>
+      <FullWidthSection 
+        title={'Touchless engagement &amp; live video streaming'}
+        body={'We work with companies ranging from startups, to mid-size corporations, to large enterprises.'}
+        image={page.node.hero_imageSharp.childImageSharp.fluid}
+        imageAlt={page.node.hero_image.alt}>
+      </FullWidthSection>
+    </section>
     <ContactFormInline />
   </Layout>
 )

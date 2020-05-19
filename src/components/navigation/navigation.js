@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import style from "../../sass/navigation.module.sass"
+import style from "../../sass/components/navigation/navigation.module.sass"
 import { useStaticQuery, graphql } from "gatsby"
 import NavItems from "./navItems"
 

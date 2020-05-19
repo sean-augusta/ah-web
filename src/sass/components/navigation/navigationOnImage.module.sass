@@ -1,6 +1,6 @@
-@import "./config/vars"
+@import "../../config/vars"
 
-.navigation
+.navigationOnImage
   position: fixed
   top: 0px
   right: 0px
@@ -37,7 +37,7 @@
     path, rect
       transition: fill $transition-fast
     .base
-      fill: var(--color-base-alt, $color-base-alt)
+      fill: var(--color-absolute-white, $color-absolute-white)
     .dot
       fill: var(--color-primary, $color-primary)
   &:hover
@@ -66,7 +66,7 @@
   transition: background $transition-medium
   svg
     path.path
-      fill: var(--color-base-alt-1, $color-base-alt-1)
+      fill: var(--color-absolute-white, $color-absolute-white)
   &:hover
     background-color: transparentize($color-absolute-black, 0.95)
   &:active
@@ -89,8 +89,10 @@ ul.navItems
     flex-grow: 0
     height: 40px
     margin-left: 8px
-    color: var(--color-typo-emp-1, $color-typo-emp-1)
+    color: var(--color-absolute-white, $color-absolute-white)
     text-decoration: none
+    a
+      color: inherit
 
 .hamburgerClose
   display: none
@@ -138,16 +140,41 @@ ul.navItems
     left: 0
     background-color: var(--color-base-blur, $color-base-blur)
     backdrop-filter: $filter-blur-glow
+  ul.navItems
+    li
+      color: var(--color-typo-emp-1, $color-typo-emp-1)
+      a
+        color: inherit
+  .logo
+    svg
+      path, rect
+        transition: fill $transition-fast
+      .base
+        fill: var(--color-base-alt, $color-base-alt)
+      .dot
+        fill: var(--color-primary, $color-primary)
+    &:hover
+      svg
+        path, rect
+          fill: var(--color-primary, $color-primary)
+    &:active
+      svg
+        path, rect
+          fill: darken($color-primary, 15%)
+  .hamburgerOpen
+    svg
+      path.path
+        fill: var(--color-base-alt-1, $color-base-alt-1)
     
 
 
 @media screen and (max-width: 1500px)
-  .navigation, .navigationscrolled
+  .navigationOnImage, .navigationscrolled
     padding-right: 64px
     padding-left: 64px
 
 @media screen and (max-width: 1250px)
-  .navigation, .navigationscrolled
+  .navigationOnImage, .navigationscrolled
     padding-right: 32px
     padding-left: 32px
 
@@ -182,9 +209,10 @@ ul.navItems
       left: 0
       background-color: var(--color-base-blur, $color-base-blur)
       backdrop-filter: $filter-blur-glow
-
+    li
+      color: var(--color-typo-emp-1, $color-typo-emp-1)
 @media screen and (max-width: 800px)
-  .navigation, .navigationscrolled
+  .navigationOnImage, .navigationscrolled
     padding-right: 16px
     padding-left: 16px
   .hamburgerClose

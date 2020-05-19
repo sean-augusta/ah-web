@@ -1,4 +1,4 @@
-@import "config/vars"
+@import "../../config/vars"
 
 .footer
   position: relative
@@ -20,6 +20,7 @@
 .newsletter
   grid-area: newsletter
   max-width: 414px
+  width: 100%
   p
     color: var(--color-typo-emp-1, $color-typo-emp-1)
     margin: 16px 0 32px 0
@@ -42,6 +43,7 @@
       outline: none
       color: var(--color-typo-emp-1, $color-typo-emp-1)
       transition: background $transition-fast
+      width: 100%
       &::placeholder
         color: var(--color-typo-emp-3, $color-typo-emp-3)
       &:hover
