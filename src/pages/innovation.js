@@ -3,8 +3,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layouts/layout"
 import Navigation from "../components/navigation/navigation"
 import SEO from "../components/seo"
-import style from "../sass/index.module.sass"
+import style from "../sass/pages/innovation.module.sass"
 import FullWidthSection from "../components/sections/fullWidthSection"
+import FullBleedDivider from "../components/sections/fullBleedDivider"
 import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
 import ContactFormInline from "../components/contact_form"
@@ -26,30 +27,44 @@ const InnovationPage = ({ data }) =>{
         <h1 className="h2">{RichText.asText(page.node.quote)}</h1>
         <h2 className="h6">{RichText.asText(page.node.author)}</h2>
       </div>
-      <div className={style.scroll}>
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-          <path d="M0 0h24v24H0V0z" fill="none"/>
-          <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
-        </svg>
-      </div>
       <div className={style.overlay}></div>
       <Img className={style.heroImg} fluid={page.node.hero_imageSharp.childImageSharp.fluid} alt={page.node.hero_image.alt}/>
     </section>
     <section className={style.homePageContent}>
-    {page.node.full_width_sections.map(function (full_width_section, index) {
-        return(
-          <FullWidthSection
-            key={index}
-            type={full_width_section.full_width_section_type}
-            title={full_width_section.full_width_section_title}
-            body={full_width_section.full_width_section_body}
-            image={full_width_section.full_width_section_imageSharp.childImageSharp.fluid}
-            imageAlt={full_width_section.full_width_section_image.alt}
-            linkTo={full_width_section.full_width_section_link}
-          >
-          </FullWidthSection>
-        )
-      })}
+      <div className={style.fullBleed}>  
+        <FullWidthSection
+          type={page.node.full_bleed_section_type}
+          title={page.node.full_bleed_section_title}
+          body={page.node.full_bleed_section_body}
+          image={page.node.full_bleed_section_imageSharp.childImageSharp.fluid}
+          imageAlt={page.node.full_bleed_section_image.alt}
+          linkTo={page.node.full_bleed_section_link}
+        >
+        </FullWidthSection>
+      </div>
+    </section>
+    <FullBleedDivider
+      image={page.node.full_bleed_divider_imageSharp.childImageSharp.fluid}
+      imageAlt={page.node.full_bleed_divider_image.alt}
+      title={page.node.full_bleed_divider_title}
+    >
+    </FullBleedDivider>
+    <section className={style.homePageContent}>
+      {page.node.full_width_sections.map(function (full_width_section, index) {
+          return(
+            <FullWidthSection
+              key={index}
+              type={full_width_section.full_width_section_type}
+              title={full_width_section.full_width_section_title}
+              body={full_width_section.full_width_section_body}
+              image={full_width_section.full_width_section_imageSharp.childImageSharp.fluid}
+              imageAlt={full_width_section.full_width_section_image.alt}
+              linkTo={full_width_section.full_width_section_link}
+            >
+            </FullWidthSection>
+          )
+        })
+      }
     </section>
     <ContactFormInline />
   </Layout>
@@ -79,6 +94,27 @@ export const query = graphql`
                 }
               }
             }
+            full_bleed_section_type
+            full_bleed_section_body
+            full_bleed_section_image
+            full_bleed_section_imageSharp {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            full_bleed_section_link
+            full_bleed_section_title
+            full_bleed_divider_image
+            full_bleed_divider_imageSharp {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            full_bleed_divider_title
             full_width_sections {
               full_width_section_type
               full_width_section_image
@@ -91,6 +127,7 @@ export const query = graphql`
               }
               full_width_section_title
               full_width_section_body
+              full_width_section_link
             }
           }
         }

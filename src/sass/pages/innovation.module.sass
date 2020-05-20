@@ -1,0 +1,166 @@
+@import "../config/vars"
+
+.logoAnimation
+  width: 100%
+  height: 100vh
+  display: flex
+  padding: 0 128px
+  box-sizing: border-box
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  position: fixed
+  top: 152px
+  right: 0
+  left: 0
+  bottom: 0
+  opacity: 1
+  transition: opacity $transition-slow
+  z-index: 0
+  svg
+    stroke: var(--color-base-alt-1, $color-base-alt-1)
+    stroke-dasharray: 15
+    stroke-dashoffset: 0
+    animation: dash 5s ease-in-out 1 forwards
+
+@keyframes dash
+  0%
+    stroke-dashoffset: 0
+    opacity: 0
+  25%
+    opacity: 1
+  100%
+    stroke-dashoffset: 500
+
+section.header
+  padding-top: 128px
+  padding-bottom: calc(128px * 2)
+  position: relative
+  min-height: calc(100vh - 128px)
+  display: flex
+  justify-content: center
+  align-items: center
+ 
+  .heroImg
+    position: absolute !important
+    top: -152px
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: calc(100% + 152px)
+    z-index: -1
+  .overlay
+    position: absolute
+    top: -152px
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: calc(100% + 152px)
+    background: rgba(0,0,0,0.16)
+    z-index: 2
+  .headerContent
+    z-index: 3
+    max-width: 600px
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    h1
+      margin: 0
+      padding: 0
+      max-width: 1000px
+      color: var(--color-absolute-white, $color-absolute-white)
+      font-weight: 600
+      text-align: left
+      overflow: visible
+      &::before
+        content: '"'
+        font-size: 2em
+        font-style: italic
+        line-height: 5px
+        margin: 0px 1rem -1rem 0px
+      &::after
+        content: '"'
+        font-style: italic
+    h2
+      margin: 16px 0px 0px 0px
+      max-width: 450px
+      color: var(--color-absolute-white, $color-absolute-white)
+      text-transform: uppercase
+      // font-weight: 300
+      &::before
+        content: "- "
+    .cta
+      display: inline-block
+      color: var(--color-primary, $color-primary)
+      background: var(--color-absolute-white, $color-absolute-white)
+      padding: 12px 24px
+      font-size: 25px
+      font-weight: 700
+      text-transform: capitalize
+      margin: 48px 0 0 0
+  .scroll
+    svg
+      fill: var(--color-absolute-white, $color-absolute-white)
+
+  section.homePageContent
+    padding-top: 128px
+  h1
+    margin: 0
+    padding: 0
+    max-width: 1000px
+  .sectionTitle
+    margin-top: 256px
+
+
+.fullBleed
+  padding: 64px 0
+  background: var(--color-secondary-highlight-1, $color-secondary-highlight-1)
+  box-shadow: -50vw 0 var(--color-secondary-highlight-1, $color-secondary-highlight-1), 50vw 0 var(--color-secondary-highlight-1, $color-secondary-highlight-1)
+.ourServicesApplied
+  margin: auto
+  width: 100%
+  padding: 128px 0px
+  max-width: 1080px
+  background: var(--color-secondary-highlight-2, $color-secondary-highlight-2)
+  box-shadow: -50vw 0 var(--color-secondary-highlight-2, $color-secondary-highlight-2), 50vw 0 var(--color-secondary-highlight-2, $color-secondary-highlight-2)
+  .illustrationWrapper
+    margin: 64px 0px 0px 0px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 16px
+
+@media screen and (max-width: 1000px)
+  section.header
+    padding-top: 32px
+
+@media screen and (max-width: 800px)
+  section.header
+    .headerContent
+      max-width: 400px
+  section.homePageContent
+    h2
+      margin-top: 128px
+  .logoAnimation
+    opacity: 0
+    // svg
+      width: 100vw
+  .ourServicesApplied
+    padding: 64px 0
+    .illustrationWrapper
+      grid-template-columns: 1fr
+
+
+
+.animationMaskAway
+  // display: contents
+  // z-index: 1
+  // position: sticky
+  // background-color: pink
+  // top: 0px
+  // // right: 0px
+  // // bottom: 0px
+  // // left: 0px
+  // width: 100vw
+  // height:  100vh
