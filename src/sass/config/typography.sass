@@ -70,7 +70,7 @@ p, .body1
   margin: 0
   padding: 0
 
-.btn
+.btn, a.btn, button.btn
   font: $button-font
   letter-spacing: $button-letter-spacing
   padding: 10px 1rem
@@ -80,6 +80,10 @@ p, .body1
   transition: all $transition-fast
   user-select: none
   outline: none
+  appearance: none
+  border: none
+  background: none
+  cursor: pointer
   &:hover, &:focus
     color: var(--color-primary, $color-primary)
     background-color: var(--color-base-1, $color-base-1)
@@ -88,7 +92,7 @@ p, .body1
     background-color: var(--color-base-2, $color-base-2)
     text-decoration: none
 
-.btn-primary
+.btn-primary, a.btn-primary, button.btn-primary
   color: var(--color-absolute-white, $color-absolute-white)
   outline: none
   background-color: var(--color-primary, $color-primary)
@@ -100,7 +104,7 @@ p, .body1
     background-color: darken($color-primary, 15%)
     text-decoration: none
 
-.btn-primary-ghost
+.btn-primary-ghost, a.btn-primary-ghost, button.btn-primary-ghost
   color: var(--color-primary, $color-primary)
   outline: none
   background-color: none

@@ -26,8 +26,8 @@ const Header = ( { onImage } ) => {
         const nav = document.getElementById('navOnImage');
         const close = document.getElementById('hamburgerClose');
         if (scrollPosition > 50) {
-          nav.className = styleOnImage.navigationOnImage + ' ' + styleOnImage.scrolled;
-          close.className = styleOnImage.hamburgerClose + ' ' + styleOnImage.scrolledItem;
+          nav.className = `${styleOnImage.navigationOnImage} ${styleOnImage.scrolled}`;
+          close.className = `${styleOnImage.hamburgerClose} ${styleOnImage.scrolledItem}`;
         } else {
           nav.className = styleOnImage.navigationOnImage;
           close.className = styleOnImage.hamburgerClose;
@@ -38,7 +38,7 @@ const Header = ( { onImage } ) => {
     function mobileNavToggle() {
       const navItems = document.getElementById('navItems');
       if (navItems.className === styleOnImage.navItems) {
-        navItems.className = styleOnImage.navItems + ' ' + styleOnImage.active;
+        navItems.className = `${styleOnImage.navItems} ${styleOnImage.active}`;
       } else {
         navItems.className = styleOnImage.navItems;
       }
@@ -87,8 +87,8 @@ const Header = ( { onImage } ) => {
         const nav = document.getElementById('nav');
         const close = document.getElementById('hamburgerClose');
         if (scrollPosition > 50) {
-          nav.className = style.navigation + ' ' + style.scrolled;
-          close.className = style.hamburgerClose + ' ' + style.scrolledItem;
+          nav.className = `${style.navigation} ${style.scrolled}`;
+          close.className = `${style.hamburgerClose} ${style.scrolledItem}`;
         } else {
           nav.className = style.navigation;
           close.className = style.hamburgerClose;
@@ -99,7 +99,7 @@ const Header = ( { onImage } ) => {
     function mobileNavToggle() {
       const navItems = document.getElementById('navItems');
       if (navItems.className === style.navItems) {
-        navItems.className = style.navItems + ' ' + style.active;
+        navItems.className = `${style.navItems} ${style.active}`;
       } else {
         navItems.className = style.navItems;
       }

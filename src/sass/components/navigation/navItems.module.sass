@@ -1,0 +1,71 @@
+@import "../../config/vars"
+
+.toggle
+  position: relative
+  cursor: pointer
+  font: $button-font
+  letter-spacing: $button-letter-spacing
+  padding: 10px 1rem
+  border-radius: $button-border-radius
+  text-decoration: none
+  color: var(--color-base-alt-1, $color-base-alt-1)
+  transition: all $transition-fast
+  user-select: none
+  outline: none
+  appearance: none
+  border: none
+  background: none
+  min-width: 92px
+  &:hover
+    color: var(--color-primary, $color-primary)
+    background-color: var(--color-base-1, $color-base-1)
+    text-decoration: none
+.toggle.active
+  position: relative
+  background: var(--color-denotive-failure, $color-denotive-failure)
+  color: var(--color-absolute-white, $color-absolute-white)
+  &:hover
+    background: var(--color-denotive-failure, $color-denotive-failure)
+    color: var(--color-absolute-white, $color-absolute-white)
+.moreNavItems
+  position: absolute
+  display: none
+  top: calc(100% + 8px)
+  right: 0
+  background: var(--color-base, $color-base)
+  margin: 0px
+  padding: 0px
+  border-radius: 8px
+  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.24)
+  overflow: hidden
+  flex-grow: 2
+  &:hover
+    background: var(--color-base, $color-base)
+  li.navItem
+    color: var(--color-typo-emp-1, $color-typo-emp-1)
+    margin: 0px
+    padding: 0px
+    text-align: center
+    width: 100%
+    &:hover
+      color: var(--color-primary, $color-primary)
+    a
+      color: inherit
+      width: 100%
+      border-radius: 0px
+      
+
+.moreNavItems.active
+  display: flex
+  flex-direction: column
+
+@media screen and ( max-width: 1000px )
+  .toggle:hover
+    color: var(--color-base-alt-1, $color-base-alt-1)
+    background: none
+  .moreNavItems
+    top: 50%
+    right: auto
+    left: auto
+    bottom: auto
+  
