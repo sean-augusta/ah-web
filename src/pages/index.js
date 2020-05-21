@@ -19,7 +19,7 @@ const IndexPage = ({ data }) =>{
     <Navigation onImage={true}/>
     <SEO 
       title={page.node.seo_title}
-      description={page.node.seo_description}
+      description={page.node.seo_description ? page.node.seo_description : null}
       keywords={page.node.seo_keywords ? page.node.seo_keywords : null}
       ogImage={page.node.og_image ? page.node.og_image.url : null}
     />

@@ -18,7 +18,7 @@ const InnovationPage = ({ data }) =>{
     <Navigation onImage={true}/>
     <SEO 
       title={page.node.seo_title}
-      description={page.node.seo_description}
+      description={page.node.seo_description ? page.node.seo_description : null}
       keywords={page.node.seo_keywords}
       ogImage={page.node.og_image ? page.node.og_image.url : null}
     />

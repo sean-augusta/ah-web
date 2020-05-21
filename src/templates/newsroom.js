@@ -14,8 +14,8 @@ const NewsroomPost = ({ data }) => {
     <Layout>
       <Navigation onImage={false}/>
       <SEO 
-        title={`post.seo_title`}
-        description={post.seo_description}
+        title={post.seo_title}
+        description={post.seo_description ? post.seo_description : null}
         keywords={post.seo_keywords ? post.seo_keywords : null}
         ogImage={post.og_image ? post.og_image.url : null}
       />
