@@ -28,14 +28,14 @@ const NewsroomPost = ({ data }) => {
     <Layout>
       <Navigation onImage={false}/>
       <SEO 
-        title={post.seo_title}
+        title={post.seo_title ? post.seo_title : RichText.asText(post.post_title)}
         description={post.seo_description ? post.seo_description : null}
         keywords={post.seo_keywords ? post.seo_keywords : null}
         ogImage={post.og_image ? post.og_image.url : null}
       />
       <section className={style.postHeader}>
         <h1 className={`h4`}>{RichText.asText(post.post_title)}</h1>
-        <Link className={style.author}>
+        <Link to={'/newsroom'} className={style.author}>
           <div className={style.avatarWrapper}>
             <img className={style.avatar} src={post.post_author.avatar.url} alt={post.post_author.avatar.alt}/>
           </div>
