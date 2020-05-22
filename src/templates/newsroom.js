@@ -48,6 +48,53 @@ const NewsroomPost = ({ data }) => {
       <section className={style.postBody}>
         <RichText render={post.post_body} htmlSerializer={htmlSerializer}/>
       </section>
+      <div className={style.sharePost}>
+        <ul>
+          <li>
+            <a 
+              href={`https://www.facebook.com/sharer/sharer.php?u=${data.site.siteMetadata.url}/newsroom/${post._meta.uid}`} 
+              target="_blank" 
+              rel="noreferrer"
+              title="Share via Facebook">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a 
+              href={`https://twitter.com/intent/tweet?text=${data.site.siteMetadata.url}/newsroom/${post._meta.uid} by ${data.site.siteMetadata.author}`} 
+              target="_blank" 
+              rel="noreferrer"
+              title="Share via Twitter">
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a 
+              href={`http://www.linkedin.com/shareArticle?mini=true&url=${data.site.siteMetadata.url}/newsroom/${post._meta.uid}&title=${RichText.asText(post.post_title)}${post.seo_description && `&summary=${post.seo_description}`}&source=${data.site.siteMetadata.url}`}
+              target="_blank" 
+              rel="noreferrer"
+              title="Share via LinkedIn">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a 
+              href={`${data.site.siteMetadata.url}/newsroom/${post._meta.uid}`}
+              target="_blank" 
+              rel="noreferrer"
+              onclick="event.preventDefault();" 
+              title="Copy Link" 
+              class="copy-btn" 
+              aria-label="Copied!" 
+              data-clipboard-text="{{ page.shortURL }}">
+              Copy Link
+            </a>
+          </li>
+       </ul>
+      </div>
+      <section>
+
+      </section>
     </Layout>
   )
 }
@@ -55,6 +102,12 @@ export default NewsroomPost
 
 export const pageQuery = graphql`
   query ($uid: String!) {
+    site {
+      siteMetadata {
+        url
+        author
+      }
+    }
     prismic {
       newsroom_post(uid: $uid, lang: "en-us") {
         _meta {
@@ -73,6 +126,7 @@ export const pageQuery = graphql`
           _linkType
           ... on PRISMIC_Author {
             name
+            bio
             avatar
             _meta {
               id

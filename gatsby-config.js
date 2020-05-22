@@ -11,6 +11,7 @@ module.exports = {
     title: `Augusta HiTech`,
     description: `Experts in blockchain technology solutions, product development, enterprise mobile application development, artificial intelligence, Internet of things for various domains.`,
     author: `@Augusta_Hitech`,
+    url: process.env.SITE_URL,
   },
   plugins: [
     `gatsby-plugin-sass`,
