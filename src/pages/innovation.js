@@ -8,7 +8,6 @@ import FullWidthSection from "../components/sections/fullWidthSection"
 import FullBleedDivider from "../components/sections/fullBleedDivider"
 import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
-import ContactFormInline from "../components/contact_form"
 
 const InnovationPage = ({ data }) =>{
   const page = data.prismic.allInnovations.edges.slice(0,1).pop();
@@ -66,7 +65,6 @@ const InnovationPage = ({ data }) =>{
         })
       }
     </section>
-    <ContactFormInline />
   </Layout>
 )
 }

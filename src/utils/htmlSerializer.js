@@ -69,7 +69,7 @@ const htmlSerializer = function(type, element, content, children, key) {
       }, 
       element.label ? {className: element.label} : {},
       {className: style.iframeEmbed});
-      const embedHtml = React.createElement('div', {dangerouslySetInnerHTML: {__html: element.oembed.html}});
+      const embedHtml = React.createElement('div' ,{dangerouslySetInnerHTML: {__html: element.oembed.html}});
       return React.createElement('div', propsWithUniqueKey(props, key), embedHtml);
 
     // Return null to stick with the default behavior

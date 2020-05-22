@@ -9,7 +9,6 @@ import style from "../sass/pages/index.module.sass"
 import FullWidthSection from "../components/sections/fullWidthSection"
 import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
-import ContactFormInline from "../components/contact_form"
 
 const IndexPage = ({ data }) =>{
   const page = data.prismic.allHomes.edges.slice(0,1).pop();
@@ -64,7 +63,6 @@ const IndexPage = ({ data }) =>{
       </div>
     </section>
     </section>
-    <ContactFormInline />
   </Layout>
 )
 }

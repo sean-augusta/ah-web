@@ -1,14 +1,28 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layouts/layout"
 import SEO from "../components/seo"
 import Navigation from "../components/navigation/navigation"
 import { RichText, Date } from 'prismic-reactjs'
 import htmlSerializer from "../utils/htmlSerializer"
 import style from "../sass/templates/newsroomPost.module.sass"
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 
 const NewsroomPost = ({ data }) => {
+  const months = {
+    0: `January`,
+    1: `February`,
+    2: `March`,
+    3: `April`,
+    4: `May`,
+    5: `June`,
+    6: `July`,
+    7: `August`,
+    8: `September`,
+    9: `October`,
+    10: `November`,
+    11: `December`,
+  };
   const post = data.prismic.newsroom_post;
   return (
     <Layout>
@@ -19,10 +33,18 @@ const NewsroomPost = ({ data }) => {
         keywords={post.seo_keywords ? post.seo_keywords : null}
         ogImage={post.og_image ? post.og_image.url : null}
       />
-      <h4>{RichText.asText(post.post_title)}</h4>
-      {post.post_author.name}
-      <h6>{Date(post._meta.firstPublicationDate).getMonth()} {Date(post._meta.firstPublicationDate).getDate()}, {Date(post._meta.firstPublicationDate).getFullYear()}</h6>
-      <img height="50px" width="50px" src={post.post_author.avatar.url} alt={post.post_author.avatar.alt}/>
+      <section className={style.postHeader}>
+        <h1 className={`h4`}>{RichText.asText(post.post_title)}</h1>
+        <Link className={style.author}>
+          <div className={style.avatarWrapper}>
+            <img className={style.avatar} src={post.post_author.avatar.url} alt={post.post_author.avatar.alt}/>
+          </div>
+          <small className={`caption`}><span>{post.post_author.name}</span> • {months[Date(post._meta.firstPublicationDate).getMonth()]} {Date(post._meta.firstPublicationDate).getDate()}, {Date(post._meta.firstPublicationDate).getFullYear()}</small>
+        </Link>
+      </section>
+      <section className={style.heroImage}>
+        <Img fluid={post.post_hero_imageSharp.childImageSharp.fluid} alt={post.post_hero_image.alt}/>
+      </section>
       <section className={style.postBody}>
         <RichText render={post.post_body} htmlSerializer={htmlSerializer}/>
       </section>

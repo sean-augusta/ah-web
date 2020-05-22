@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import ContactFormInline from "../contact_form"
 import Footer from "../footer/footer"
 import "../../sass/config/config.sass"
 
@@ -29,6 +30,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {children}
+      <ContactFormInline />
       <Footer siteTitle={data.site.siteMetadata.title} />
     </>
   )
