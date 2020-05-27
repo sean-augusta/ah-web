@@ -55,11 +55,11 @@ const NewsroomPost = ({ data, pageContext }) => {
       />
       <section className={style.postHeader}>
         <h1 className={`h4`}>{RichText.asText(post.post_title)}</h1>
-        <Link to={'/newsroom'} className={style.author}>
+        <Link to={`/author/${post.author._meta.uid}`} className={style.author}>
           <div className={style.avatarWrapper}>
-            <img className={style.avatar} src={post.post_author.avatar.url} alt={post.post_author.avatar.alt}/>
+            <img className={style.avatar} src={post.author.avatar.url} alt={post.author.avatar.alt}/>
           </div>
-          <small className={`caption`}><span>{post.post_author.name}</span> • {months[Date(post._meta.firstPublicationDate).getMonth()]} {Date(post._meta.firstPublicationDate).getDate()}, {Date(post._meta.firstPublicationDate).getFullYear()}</small>
+          <small className={`caption`}><span>{post.author.name}</span> • {months[Date(post._meta.firstPublicationDate).getMonth()]} {Date(post._meta.firstPublicationDate).getDate()}, {Date(post._meta.firstPublicationDate).getFullYear()}</small>
         </Link>
       </section>
       <section className={style.heroImage}>
@@ -144,11 +144,11 @@ const NewsroomPost = ({ data, pageContext }) => {
         <hr/>
         <div className={style.authorBio}>
           <div className={style.avatarWrapper}>
-            <img className={style.avatar} src={post.post_author.avatar.url} alt={post.post_author.avatar.alt}/>
+            <img className={style.avatar} src={post.author.avatar.url} alt={post.author.avatar.alt}/>
           </div>
           <div className={style.authorContent}>
-            <h6 className={`subtitle1`}><b>{post.post_author.name}</b></h6>
-            <p className={`body2`}>{post.post_author.bio}</p>
+            <h6 className={`subtitle1`}><b>{post.author.name}</b></h6>
+            <p className={`body2`}>{post.author.bio}</p>
           </div>
         </div>
         <hr/>
@@ -208,7 +208,7 @@ export const pageQuery = graphql`
         seo_description
         seo_keywords
         og_image
-        post_author {
+        author {
           _linkType
           ... on PRISMIC_Author {
             name
@@ -216,6 +216,7 @@ export const pageQuery = graphql`
             avatar
             _meta {
               id
+              uid
             }
           }
         }

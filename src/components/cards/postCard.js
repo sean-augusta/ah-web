@@ -10,8 +10,8 @@ const PostCard = ({url, image, alt, title}) => {
     <Link className={style.postWrapper} to={url}>
       <Img className={style.postThumbnail} fluid={image} alt={alt} />
       <div className={style.postContent}>
-        <h2 className={`${style.postTitle} h6`}>{title}</h2>
-        <p className={`${style.postCTA} btn btn-primary-ghost`}>Read &#x2794;</p>
+        <h2 className={`h6 ${style.postTitle}`}>{title}</h2>
+        <p className={`btn btn-primary-ghost ${style.postCTA}`}>Read &#x2794;</p>
       </div>
     </Link>
   )

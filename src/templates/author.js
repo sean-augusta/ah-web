@@ -8,23 +8,23 @@ import { RichText } from 'prismic-reactjs'
 import PostCard from "../components/cards/postCard"
 
 
-const NewsroomPage = ({ data }) =>{
-  const page = data.prismic.allNewsrooms.edges.slice(0,1).pop();
-  if(!page) return null;
+const AuthorPage = ({ data }) =>{
+  const author = data.prismic.author;
+  if(!author) return null;
   const posts = data.prismic.allNewsroom_posts.edges;
   if(!posts) return null;
   return (
   <Layout>
     <Navigation onImage={true}/>
     <SEO 
-      title={page.node.seo_title}
-      description={page.node.seo_description ? page.node.seo_description : null}
-      keywords={page.node.seo_keywords ? page.node.seo_keywords : null}
-      ogImage={page.node.og_image ? page.node.og_image.url : null}
+      title={author.seo_title}
+      description={author.seo_description ? author.seo_description : null}
+      keywords={author.seo_keywords ? author.seo_keywords : null}
+      ogImage={author.og_image ? author.og_image.url : null}
     />
     <section className={style.subpageHeader}>
       <div className={style.headerContent}>
-        <h1 className="h2">{RichText.asText(page.node.title)}</h1>
+        <h1 className="h2">{author.name}</h1>
       </div>
     </section>
     <section className={style.postsContainer}>
@@ -44,32 +44,20 @@ const NewsroomPage = ({ data }) =>{
 )
 }
 
-export default NewsroomPage
+export default AuthorPage
 
 export const query = graphql`
-  {
+  query ($uid: String!, $id: String!) {
     prismic {
-      allNewsrooms {
-        edges {
-          node {
-            title
-            subtitle
-            seo_title
-            seo_keywords
-            seo_description
-            page_name
-            og_image
-            og_imageSharp {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
+      author(lang: "en-us", uid: $uid) {
+        _meta {
+          uid
         }
+        avatar
+        bio
+        name
       }
-      allNewsroom_posts (sortBy: meta_firstPublicationDate_DESC) {
+      allNewsroom_posts(where: {author: $id}) {
         edges {
           node {
             _meta {
@@ -91,6 +79,7 @@ export const query = graphql`
                 avatar
                 _meta {
                   id
+                  uid
                 }
               }
             }
