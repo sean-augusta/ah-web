@@ -5,7 +5,7 @@ import Navigation from "../components/navigation/navigation"
 import SEO from "../components/seo"
 import style from "../sass/pages/newsroom.module.sass"
 import { RichText } from 'prismic-reactjs'
-import Img from "gatsby-image"
+import PostCard from "../components/cards/postCard"
 
 
 const NewsroomPage = ({ data }) =>{
@@ -30,13 +30,13 @@ const NewsroomPage = ({ data }) =>{
     <section className={style.postsContainer}>
     {posts.map(function (post, index) {
       return(
-      <Link className={style.postWrapper} key={index} to={`newsroom/${post.node._meta.uid}`}>
-        <Img className={style.postThumbnail} fluid={post.node.post_hero_imageSharp.childImageSharp.fluid} alt={post.node.post_hero_image.alt} />
-        <div className={style.postContent}>
-          <h2 className={`${style.postTitle} h6`}>{RichText.asText(post.node.post_title)}</h2>
-          <p className={`${style.postCTA} btn btn-primary-ghost`}>Read More &#x2794;</p>
-        </div>
-      </Link>
+        <PostCard
+          key={index}
+          url={`newsroom/${post.node._meta.uid}`}
+          image={post.node.post_hero_imageSharp.childImageSharp.fluid}
+          alt={post.node.post_hero_image.alt}
+          title={RichText.asText(post.node.post_title)}
+        />
       )
     })}
     </section>
@@ -69,7 +69,7 @@ export const query = graphql`
           }
         }
       }
-      allNewsroom_posts {
+      allNewsroom_posts (sortBy: meta_firstPublicationDate_ASC) {
         edges {
           node {
             _meta {

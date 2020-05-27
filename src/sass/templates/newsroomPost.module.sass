@@ -115,3 +115,60 @@
     box-sizing: border-box
 
 @import "../components/sharePost.module"
+
+.authorBioSection
+  width: 100%
+  max-width: 800px
+  margin: 88px auto
+  box-sizing: border-box
+  hr
+    width: 100%
+    border: 1px solid var(--color-base-alt-2, $color-base-alt-2)
+    opacity: .25
+  .authorBio
+    display: grid
+    grid-template-columns: auto 1fr
+    grid-template-areas: "avatar content"
+    grid-gap: 16px
+    align-content: start
+    align-items: start
+    justify-content: start
+    justify-items: start
+    max-width: 650px
+    margin: 88px auto
+    .avatarWrapper
+      width: 60px
+      height: 60px
+      grid-area: avatar
+      .avatar
+        width: 60px
+        height: 60px
+        border-radius: 100%
+        background: var(--color-secondary-highlight-2, $color-secondary-highlight-2)
+        object-fit: cover
+    .authorContent
+      grid-area: content
+
+.pagination
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  .prev, .next
+    min-width: 104px
+    margin: 4px
+    text-decoration: none
+    &:hover
+      text-decoration: none
+
+.suggestedPosts
+  max-width: 1256px
+  margin: 88px auto 0 auto
+  .postsContainer
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+    grid-gap: 16px
+    padding-top: 64px
+    padding-bottom: 0px
+    margin-left: auto
+    margin-right: auto

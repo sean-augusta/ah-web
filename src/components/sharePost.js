@@ -63,18 +63,18 @@ const SharePost = ( data ) => {
   );
 }
 
-// SharePost.defaultProps = {
-//   facebookUrl: ``,
-//   twitterUrl: ``,
-//   linkedinUrl: ``,
-//   copyUrl: ``,
-// }
+SharePost.defaultProps = {
+  facebookUrl: ``,
+  twitterUrl: ``,
+  linkedinUrl: ``,
+  copyUrl: ``,
+}
 
-// SharePost.propTypes = {
-//   facebookUrl: PropTypes.string.isRequired,
-//   twitterUrl: PropTypes.string.isRequired,
-//   linkedinUrl: PropTypes.string.isRequired,
-//   copyUrl: PropTypes.string.isRequired,
-// }
+SharePost.propTypes = {
+  facebookUrl: PropTypes.string.isRequired,
+  twitterUrl: PropTypes.string.isRequired,
+  linkedinUrl: PropTypes.string.isRequired,
+  copyUrl: PropTypes.string.isRequired,
+}
 
 export default SharePost

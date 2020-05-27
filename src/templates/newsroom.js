@@ -9,22 +9,25 @@ import style from "../sass/templates/newsroomPost.module.sass"
 import Img from "gatsby-image"
 import Clipboard from "clipboard"
 import $ from "jquery"
-// import SharePost from "../components/SharePost"
+import PostCard from "../components/cards/postCard"
 
-const NewsroomPost = ({ data }) => {
-  var clipboard = new Clipboard('.copy-btn');
+const NewsroomPost = ({ data, pageContext }) => {
+  const {next, prev} = pageContext;
+  if (typeof window !== 'undefined') {
+    var clipboard = new Clipboard('.copy-btn');
 
-  clipboard.on('success', function(e) {
-    console.log('Successfully copied text!');
-    $(e.trigger).addClass(style.tooltipped);
-    setTimeout(function() {
-      $(e.trigger).removeClass(style.tooltipped);
-    }, 2000);
-  });
+    clipboard.on('success', function(e) {
+      console.log('Successfully copied text!');
+      $(e.trigger).addClass(style.tooltipped);
+      setTimeout(function() {
+        $(e.trigger).removeClass(style.tooltipped);
+      }, 2000);
+    });
 
-  clipboard.on('error', function(e) {
-      alert('That didn\'t work for some reason. You might just have to copy it yourself while we get this figured out :(');
-  });
+    clipboard.on('error', function(e) {
+        alert('That didn\'t work for some reason. You might just have to copy it yourself while we get this figured out :(');
+    });
+  }
 
   const months = {
     0: `January`,
@@ -137,8 +140,46 @@ const NewsroomPost = ({ data }) => {
           </li>
         </ul>
       </div>
-      <section>
-
+      <section className={style.authorBioSection}>
+        <hr/>
+        <div className={style.authorBio}>
+          <div className={style.avatarWrapper}>
+            <img className={style.avatar} src={post.post_author.avatar.url} alt={post.post_author.avatar.alt}/>
+          </div>
+          <div className={style.authorContent}>
+            <h6 className={`subtitle1`}><b>{post.post_author.name}</b></h6>
+            <p className={`body2`}>{post.post_author.bio}</p>
+          </div>
+        </div>
+        <hr/>
+      </section>
+      <section className={style.pagination}>
+        {prev && <Link className={`btn btn-secondary-ghost ${style.prev}`} to={`newsroom/${prev.node._meta.uid}`}>Previous</Link>}
+        {next && <Link className={`btn btn-primary ${style.next}`} to={`newsroom/${next.node._meta.uid}`}>Next</Link>}
+      </section>
+      <section className={style.suggestedPosts}>
+        <h2 className={`h4`}>Suggested Articles</h2>
+        <span className={'headerUnderline'}></span>
+        <div className={style.postsContainer}>
+          <PostCard
+            url={`newsroom/${post.suggested_post_one._meta.uid}`}
+            image={post.suggested_post_one.post_hero_imageSharp.childImageSharp.fluid}
+            alt={post.suggested_post_one.post_hero_image.alt}
+            title={RichText.asText(post.suggested_post_one.post_title)}
+          />
+          <PostCard
+            url={`newsroom/${post.suggested_post_two._meta.uid}`}
+            image={post.suggested_post_two.post_hero_imageSharp.childImageSharp.fluid}
+            alt={post.suggested_post_two.post_hero_image.alt}
+            title={RichText.asText(post.suggested_post_two.post_title)}
+          />
+          <PostCard
+            url={`newsroom/${post.suggested_post_three._meta.uid}`}
+            image={post.suggested_post_three.post_hero_imageSharp.childImageSharp.fluid}
+            alt={post.suggested_post_three.post_hero_image.alt}
+            title={RichText.asText(post.suggested_post_three.post_title)}
+          />
+        </div>
       </section>
     </Layout>
   )
@@ -188,6 +229,54 @@ export const pageQuery = graphql`
           }
         }
         post_body
+        suggested_post_one {
+          ... on PRISMIC_Newsroom_post {
+            post_title
+            _meta {
+              uid
+            }
+            post_hero_image
+            post_hero_imageSharp {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        suggested_post_two {
+          ... on PRISMIC_Newsroom_post {
+            post_title
+            _meta {
+              uid
+            }
+            post_hero_image
+            post_hero_imageSharp {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        suggested_post_three {
+          ... on PRISMIC_Newsroom_post {
+            post_title
+            _meta {
+              uid
+            }
+            post_hero_image
+            post_hero_imageSharp {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

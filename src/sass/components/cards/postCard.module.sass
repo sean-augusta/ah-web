@@ -1,0 +1,56 @@
+@import "../../config/vars"
+
+.postWrapper
+  background: var(--color-base, $color-base)
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: auto 1fr
+  align-items: start
+  align-content: start
+  justify-content: start
+  justify-items: start
+  transition: all $transition-medium
+  box-shadow: 0px 2px 4px 0px var(--color-base-alt-opacity, $color-base-alt-opacity)
+  text-decoration: none
+  .postThumbnail
+    width: 100%
+    height: 0px
+    padding-top: calc((9/16)*100%)
+  .postContent
+    padding: 1rem
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    align-content: flex-start
+    justify-content: space-between
+    height: 100%
+    box-sizing: border-box
+    text-decoration: none
+    .postTitle
+      text-decoration: inherit
+    .postCTA
+      margin-top: 24px
+      margin-left: -1rem
+      text-decoration: none
+      background: none
+      &:active, &:hover, &:focus
+        background: none
+  &:hover
+    box-shadow: 0px 2px 40px 0px var(--color-base-alt-opacity, $color-base-alt-opacity)
+    .postContent
+      .postTitle
+        text-decoration: none
+      .postCTA
+        text-decoration: underline
+        background: none
+  // &:nth-child(4n + 1)
+  //   grid-column: 1/4
+  //   grid-template-columns: 1fr 1fr
+  //   grid-template-rows: 1fr
+  //   .postThumbnail
+  //     padding-top: calc((3/4)*100%)
+  //   .postContent
+  //     .postTitle
+  //       font: $h5-font
+  //       letter-spacing: $h5-letter-spacing
