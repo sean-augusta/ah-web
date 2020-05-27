@@ -1,0 +1,66 @@
+@import "../config/vars"
+
+.sharePost
+  margin: auto
+  max-width: 208px
+  padding: 0
+  ul
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(46px, 1fr))
+    grid-gap: 8px
+    align-items: center
+    align-content: center
+    justify-items: center
+    justify-content: center
+    margin: 0px
+    padding: 0px
+    list-style: none
+    li
+      margin: 0px
+      padding: 0px
+      height: 46px
+      width: 46px
+      position: relative
+      a, button
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: var(--color-base, $color-base)
+        height: 46px
+        width: 46px
+        border-radius: 100%
+        transition: all $transition-fast
+        position: relative
+        appearence: none
+        outline: none
+        border: none
+        cursor: pointer
+        z-index: 1
+        svg
+          max-width: 30px
+          transition: inherit
+          path
+            fill: var(--color-base-alt, $color-base-alt)
+            transition: inherit
+        &:hover
+          background: var(--color-base-2, $color-base-2)
+          svg
+            path
+              fill: var(--color-primary, $color-primary)
+      button.tooltipped::after
+        position: absolute
+        z-index: 100
+        content: "Copied!"
+        left: 50%
+        bottom: -4px
+        right: auto
+        top: auto
+        transform: translateX(-50%) translateY(100%)
+        width: auto
+        font-size: 12px
+        padding: 8px
+        border-radius: 4px
+        color: var(--color-base, $color-base)
+        font-weight: 500
+        background: var(--color-base-alt, $color-base-alt)
