@@ -6,10 +6,11 @@ import SEO from "../components/seo"
 import style from "../sass/pages/subpage.module.sass"
 import FullWidthSection from "../components/sections/fullWidthSection"
 import CardNoElevation from "../components/cards/cardNoElevation"
+import PostCard from "../components/cards/postCard"
 import { RichText } from 'prismic-reactjs'
 
-const CompanyPage = ({ data }) =>{
-  const page = data.prismic.allCompanys.edges.slice(0,1).pop();
+const IndustriesPage = ({ data }) =>{
+  const page = data.prismic.allIndustriess.edges.slice(0,1).pop();
   if(!page) return null;
   return (
   <Layout>
@@ -37,23 +38,6 @@ const CompanyPage = ({ data }) =>{
         >
         </FullWidthSection>
     </section>
-    <section className={style.homePageContent}>
-      {page.node.full_width_sections.map(function (full_width_section, index) {
-          return(
-            <FullWidthSection
-              key={index}
-              type={full_width_section.full_width_section_type}
-              title={full_width_section.full_width_section_title}
-              body={full_width_section.full_width_section_body}
-              image={full_width_section.full_width_section_imageSharp.childImageSharp.fluid}
-              imageAlt={full_width_section.full_width_section_image.alt}
-              linkTo={full_width_section.full_width_section_link}
-            >
-            </FullWidthSection>
-          )
-        })
-      }
-    </section>
     <section className={`${style.pageContent} ${style.aside}`}>
       <div>
         <h3 className={'h4'}>{page.node.card_list_title}</h3>
@@ -75,16 +59,40 @@ const CompanyPage = ({ data }) =>{
         }
       </div>
     </section>
+    <section className={style.suggestedPosts}>
+        <h2 className={`h4`}>Suggested Articles</h2>
+        <span className={'headerUnderline'}></span>
+        <div className={style.postsContainer}>
+          <PostCard
+            url={`newsroom/${page.node.suggested_post_one._meta.uid}`}
+            image={page.node.suggested_post_one.post_hero_imageSharp.childImageSharp.fluid}
+            alt={page.node.suggested_post_one.post_hero_image.alt}
+            title={RichText.asText(page.node.suggested_post_one.post_title)}
+          />
+          <PostCard
+            url={`newsroom/${page.node.suggested_post_two._meta.uid}`}
+            image={page.node.suggested_post_two.post_hero_imageSharp.childImageSharp.fluid}
+            alt={page.node.suggested_post_two.post_hero_image.alt}
+            title={RichText.asText(page.node.suggested_post_two.post_title)}
+          />
+          <PostCard
+            url={`newsroom/${page.node.suggested_post_three._meta.uid}`}
+            image={page.node.suggested_post_three.post_hero_imageSharp.childImageSharp.fluid}
+            alt={page.node.suggested_post_three.post_hero_image.alt}
+            title={RichText.asText(page.node.suggested_post_three.post_title)}
+          />
+        </div>
+      </section>
   </Layout>
 )
 }
 
-export default CompanyPage
+export default IndustriesPage
 
 export const query = graphql`
   {
     prismic {
-      allCompanys {
+      allIndustriess {
         edges {
           node {
             seo_title
@@ -106,20 +114,6 @@ export const query = graphql`
             }
             full_bleed_section_link
             full_bleed_section_title
-            full_width_sections {
-              full_width_section_type
-              full_width_section_image
-              full_width_section_imageSharp {
-                childImageSharp {
-                  fluid  {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              full_width_section_title
-              full_width_section_body
-              full_width_section_link
-            }
             card_list_title
             card_list_items {
               card_title
@@ -133,6 +127,54 @@ export const query = graphql`
                 }
               }
               see_more
+            }
+            suggested_post_one {
+              ... on PRISMIC_Newsroom_post {
+                post_title
+                _meta {
+                  uid
+                }
+                post_hero_image
+                post_hero_imageSharp {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+            suggested_post_two {
+              ... on PRISMIC_Newsroom_post {
+                post_title
+                _meta {
+                  uid
+                }
+                post_hero_image
+                post_hero_imageSharp {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+            suggested_post_three {
+              ... on PRISMIC_Newsroom_post {
+                post_title
+                _meta {
+                  uid
+                }
+                post_hero_image
+                post_hero_imageSharp {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
             }
           }
         }
