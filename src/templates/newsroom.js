@@ -61,7 +61,7 @@ const NewsroomPost = ({ data, pageContext }) => {
           </div>
           <div className={style.authorMeta}>
             <small className={`caption ${style.postedWrapper}`}><span>{post.author.name}</span> • {months[Date(post._meta.firstPublicationDate).getMonth()]} {Date(post._meta.firstPublicationDate).getDate()}, {Date(post._meta.firstPublicationDate).getFullYear()}</small>
-            {post._meta.lastPublicationDate != post._meta.firstPublicationDate && <small className={`caption ${style.updatedWrapper}`}><span>Updated</span> • {months[Date(post._meta.lastPublicationDate).getMonth()]} {Date(post._meta.lastPublicationDate).getDate()}, {Date(post._meta.lastPublicationDate).getFullYear()}</small>}
+            {post._meta.lastPublicationDate !== post._meta.firstPublicationDate && <small className={`caption ${style.updatedWrapper}`}><span>Updated</span> • {months[Date(post._meta.lastPublicationDate).getMonth()]} {Date(post._meta.lastPublicationDate).getDate()}, {Date(post._meta.lastPublicationDate).getFullYear()}</small>}
           </div>
         </Link>
         

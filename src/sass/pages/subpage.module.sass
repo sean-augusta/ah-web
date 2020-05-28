@@ -1,0 +1,43 @@
+@import "../config/vars"
+
+section.subpageHeader
+  margin-top: -156px
+  padding-top: 156px
+  position: relative
+  display: grid
+  grid-template-rows: 1fr
+  padding-bottom: 32px
+  background: var(--color-linear-gradient-start, $color-linear-gradient-start)
+  background: linear-gradient(145deg, var(--color-linear-gradient-start, $color-linear-gradient-start) 0%, var(--color-linear-gradient-end, $color-linear-gradient-end) 100%)
+  .headerContent
+    z-index: 3
+    h6
+      margin: 32px 0 0 0
+      max-width: 450px
+      color: var(--color-absolute-white, $color-absolute-white)
+      text-transform: uppercase
+      opacity: .67
+    h1
+      margin: 0
+      padding: 0
+      max-width: 1000px
+      color: var(--color-absolute-white, $color-absolute-white)
+      font-weight: 600
+
+section.pageContent
+  padding-top: 128px
+
+.coreValues
+  display: grid
+  grid-template-columns: repeat( auto-fit , minmax(300px, 1fr) )
+  grid-column-gap: 16px
+  grid-row-gap: 32px
+  .coreValue
+    display: flex
+    flex-direction: column
+    .valueImage
+      width: 100%
+      height: 0px
+      padding-top: calc((9/16)*100%)
+    h5
+      margin: 24px 0px 8px 0px

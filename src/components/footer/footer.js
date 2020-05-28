@@ -42,44 +42,44 @@ const Footer = ({ siteTitle }) => (
     <div className={style.footerLinks}>
       <ul>
         <li><h6>Services</h6></li>
-        <li><Link to="/">Innovation as a Service</Link></li>
-        <li><Link to="/">Blockchain Engineering</Link></li>
-        <li><Link to="/">Blockchain Testing</Link></li>
-        <li><Link to="/">Machine Learning</Link></li>
-        <li><Link to="/">Robotic Process Automation</Link></li>
-        <li><Link to="/">Cloud &amp; Infrastructure Services</Link></li>
-        <li><Link to="/">Product Development</Link></li>
-        <li><Link to="/">Internet of Things</Link></li>
-        <li><Link to="/">Data &amp; Analytics</Link></li>
-        <li><Link to="/">DevOps</Link></li>
+        <li><Link to={`/`}>Innovation as a Service</Link></li>
+        <li><Link to={`/`}>Blockchain Engineering</Link></li>
+        <li><Link to={`/`}>Blockchain Testing</Link></li>
+        <li><Link to={`/`}>Machine Learning</Link></li>
+        <li><Link to={`/`}>Robotic Process Automation</Link></li>
+        <li><Link to={`/`}>Cloud &amp; Infrastructure Services</Link></li>
+        <li><Link to={`/`}>Product Development</Link></li>
+        <li><Link to={`/`}>Internet of Things</Link></li>
+        <li><Link to={`/`}>Data &amp; Analytics</Link></li>
+        <li><Link to={`/`}>DevOps</Link></li>
       </ul>
       <ul>
         <li><h6>Products</h6></li>
-        <li><Link to="/">AH Cancer Blockchain</Link></li>
-        <li><Link to="/">AI Natural Conversation</Link></li>
-        <li><Link to="/">ADA Solution</Link></li>
-        <li><Link to="/">Blue Care</Link></li>
-        <li><Link to="/">AH Certified</Link></li>
-        <li><Link to="/">AH Supply Chain</Link></li>
-        <li><Link to="/">AH Blockchain Framework</Link></li>
+        <li><Link to={`/`}>AH Cancer Blockchain</Link></li>
+        <li><Link to={`/`}>AI Natural Conversation</Link></li>
+        <li><Link to={`/`}>ADA Solution</Link></li>
+        <li><Link to={`/`}>Blue Care</Link></li>
+        <li><Link to={`/`}>AH Certified</Link></li>
+        <li><Link to={`/`}>AH Supply Chain</Link></li>
+        <li><Link to={`/`}>AH Blockchain Framework</Link></li>
       </ul>
       <ul>
         <li><h6>Company</h6></li>
-        <li><Link to="/">Newsroom</Link></li>
-        <li><Link to="/">Leadership</Link></li>
-        <li><Link to="/">Careers</Link></li>
-        <li><Link to="/">Company</Link></li>
-        <li><Link to="/">Events</Link></li>
+        <li><Link to={`/newsroom`}>Newsroom</Link></li>
+        <li><Link to={`/`}>Leadership</Link></li>
+        <li><Link to={`/company`}>Careers</Link></li>
+        <li><Link to={`/`}>Company</Link></li>
+        <li><Link to={`/`}>Events</Link></li>
       </ul>
       <ul>
         <li><h6>Resources</h6></li>
-        <li><Link to="/">Privacy Policy</Link></li>
-        <li><Link to="/">Sitemap</Link></li>
-        <li><Link to="/">Contact</Link></li>
-        <li><Link to="/">Case Studies</Link></li>
-        <li><Link to="/">AH Labs</Link></li>
-        <li><Link to="/">AH Startups</Link></li>
-        <li><Link to="/">Partner Program</Link></li>
+        <li><Link to={`/`}>Privacy Policy</Link></li>
+        <li><Link to={`/`}>Sitemap</Link></li>
+        <li><Link to={`/`}>Contact</Link></li>
+        <li><Link to={`/`}>Case Studies</Link></li>
+        <li><Link to={`/`}>AH Labs</Link></li>
+        <li><Link to={`/`}>AH Startups</Link></li>
+        <li><Link to={`/`}>Partner Program</Link></li>
       </ul>
       <ul>
         <li><h6>Social</h6></li>
