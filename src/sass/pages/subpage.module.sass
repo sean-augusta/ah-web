@@ -27,17 +27,18 @@ section.subpageHeader
 section.pageContent
   padding-top: 128px
 
-.coreValues
+.aside
+  display: grid
+  grid-template-columns: minmax(200px, auto) 1fr
+  grid-column-gap: 128px
+
+.cardNoElevationContainer
   display: grid
   grid-template-columns: repeat( auto-fit , minmax(300px, 1fr) )
   grid-column-gap: 16px
-  grid-row-gap: 32px
-  .coreValue
-    display: flex
-    flex-direction: column
-    .valueImage
-      width: 100%
-      height: 0px
-      padding-top: calc((9/16)*100%)
-    h5
-      margin: 24px 0px 8px 0px
+  grid-row-gap: 64px
+
+
+@media screen and ( max-width: 800px )
+  .aside
+    grid-template-columns: 1fr

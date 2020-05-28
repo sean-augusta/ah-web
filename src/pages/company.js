@@ -5,6 +5,7 @@ import Navigation from "../components/navigation/navigation"
 import SEO from "../components/seo"
 import style from "../sass/pages/subpage.module.sass"
 import FullWidthSection from "../components/sections/fullWidthSection"
+import CardNoElevation from "../components/cards/cardNoElevation"
 import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
 
@@ -54,19 +55,22 @@ const CompanyPage = ({ data }) =>{
         })
       }
     </section>
-    <section className={style.pageContent}>
+    <section className={`${style.pageContent} ${style.aside}`}>
       <div>
         <h3 className={'h4'}>{page.node.core_values_title}</h3>
         <span className={'headerUnderline'}></span>
       </div>
-      <div className={style.coreValues}>
+      <div className={style.cardNoElevationContainer}>
         {page.node.core_values.map(function (value, index) {
             return(
-              <div className={style.coreValue} key={index}>
-                <Img className={style.valueImage} fluid={value.value_imageSharp.childImageSharp.fluid} alt={value.value_image.alt}/>
-                <h5 className={`h6`}>{value.value_title}</h5>
-                <p>{value.value_description}</p>
-              </div>
+              <CardNoElevation
+                key={index}
+                image={value.value_imageSharp.childImageSharp.fluid}
+                alt={value.value_image.alt}
+                title={value.value_title}
+                body={value.value_description}
+                linkTo={value.see_more} 
+              />
             )
           })
         }
@@ -122,6 +126,7 @@ export const query = graphql`
               value_title
               value_description
               value_image
+              see_more
               value_imageSharp {
                 childImageSharp {
                   fluid  {
