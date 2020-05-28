@@ -52,7 +52,7 @@ const IndustriesPage = ({ data }) =>{
                 alt={item.card_image.alt}
                 title={item.card_title}
                 body={item.card_description}
-                linkTo={item.cardore} 
+                linkTo={item.see_more} 
               />
             )
           })
