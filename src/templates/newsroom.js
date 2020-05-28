@@ -59,8 +59,12 @@ const NewsroomPost = ({ data, pageContext }) => {
           <div className={style.avatarWrapper}>
             <img className={style.avatar} src={post.author.avatar.url} alt={post.author.avatar.alt}/>
           </div>
-          <small className={`caption`}><span>{post.author.name}</span> • {months[Date(post._meta.firstPublicationDate).getMonth()]} {Date(post._meta.firstPublicationDate).getDate()}, {Date(post._meta.firstPublicationDate).getFullYear()}</small>
+          <div className={style.authorMeta}>
+            <small className={`caption ${style.postedWrapper}`}><span>{post.author.name}</span> • {months[Date(post._meta.firstPublicationDate).getMonth()]} {Date(post._meta.firstPublicationDate).getDate()}, {Date(post._meta.firstPublicationDate).getFullYear()}</small>
+            {post._meta.lastPublicationDate != post._meta.firstPublicationDate && <small className={`caption ${style.updatedWrapper}`}><span>Updated</span> • {months[Date(post._meta.lastPublicationDate).getMonth()]} {Date(post._meta.lastPublicationDate).getDate()}, {Date(post._meta.lastPublicationDate).getFullYear()}</small>}
+          </div>
         </Link>
+        
       </section>
       <section className={style.heroImage}>
         <Img fluid={post.post_hero_imageSharp.childImageSharp.fluid} alt={post.post_hero_image.alt}/>

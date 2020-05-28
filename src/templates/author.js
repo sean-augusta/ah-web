@@ -56,6 +56,10 @@ export const query = graphql`
         avatar
         bio
         name
+        seo_title
+        seo_description
+        seo_keywords
+        og_image
       }
       allNewsroom_posts(where: {author: $id}) {
         edges {

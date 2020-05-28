@@ -8,7 +8,7 @@
   display: grid
   grid-template-columns: 1fr
   grid-template-rows: auto
-  grid-gap: 16px
+  grid-gap: 0
   &::before
     content: ""
     position: absolute
@@ -20,9 +20,9 @@
     bottom: 0px
     left: 0px
     z-index: -1
-
   h1
     max-width: 1000px
+    margin-bottom: 16px
   .author
     display: grid
     grid-template-rows: 1fr
@@ -66,19 +66,24 @@
         height: 25px
         border-radius: 100%
         object-fit: cover
-    small
-      text-decoration: none
-      text-transform: uppercase
-      color: inherit
-      span
-        font-weight: 600
+    .authorMeta
+      display: grid
+      grid-template-columns: 1fr
+      grid-gap: 0px
+      .postedWrapper, .updatedWrapper
+        text-decoration: none
+        text-transform: uppercase
         color: inherit
+        span
+          font-weight: 600
+          color: inherit
     &:hover
       color: var(--color-primary, $color-primary)
       .avatarWrapper
         background: var(--color-secondary-highlight-2, $color-secondary-highlight-2)
         &::after
           opacity: 1
+  
 .heroImage
   margin-top: -32px
 .postBody
