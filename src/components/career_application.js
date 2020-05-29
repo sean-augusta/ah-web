@@ -1,7 +1,40 @@
 import React from "react"
 import style from "../sass/components/careerApplication.module.sass"
 import {RichText} from "prismic-reactjs"
+import firebase from "../services/firebase-config"
 
+function add(event) {
+  event.preventDefault()
+
+  // Firestore Reference
+  const db = firebase.firestore()
+
+  // Get Form Data
+  const name = document.getElementById("name").value
+  const email = document.getElementById("email").value
+  const phone = document.getElementById("phone").value
+  const position = document.getElementById("position").value
+
+  if (name.length <= 0 || email.length <= 0 || phone.length <= 0 || position.length <= 0) {
+    alert("Failure")
+    return
+  } else {
+    db.collection("career_application").add({
+      name: name,
+      email: email,
+      phone: phone,
+      position: position,
+    })
+    .then(function() {
+      firebase.analytics().logEvent('contact_form_sent_error')
+      alert("Successfully sent!")
+    })
+    .catch(function(error) {
+      firebase.analytics().logEvent('contact_form_sent')
+      console.error("Error sending form:", error)
+    })
+  }
+}
 
 const CareerApplication = ({positions, currentPosition}) => {
 
@@ -19,6 +52,7 @@ const CareerApplication = ({positions, currentPosition}) => {
             className="h6"
           >My name is</label>
           <input
+            id="name"
             type="text"
             name="name"
             placeholder="Your name"
@@ -33,6 +67,7 @@ const CareerApplication = ({positions, currentPosition}) => {
             className="h6"
           >My email is</label>
           <input
+            id="email"
             type="email"
             name="email"
             placeholder="Your email"
@@ -47,6 +82,7 @@ const CareerApplication = ({positions, currentPosition}) => {
             className="h6"
           >My phone number is</label>
           <input
+            id="phone"
             type="tel"
             name="phone"
             placeholder="Your phone number"
@@ -62,6 +98,7 @@ const CareerApplication = ({positions, currentPosition}) => {
             className="h6"
           >Position of interest</label>
           <select
+            id="position"
             type="text"
             name="workplace"
             placeholder="Your workplace"
@@ -84,7 +121,7 @@ const CareerApplication = ({positions, currentPosition}) => {
           </select>
         </div>
 
-        <button>Submit Application</button>
+        <button onClick={add}>Submit Application</button>
       </form>
     </div>
   )

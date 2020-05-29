@@ -15,7 +15,7 @@ if (process.env.GATSBY_ACTIVE_ENV === "production") {
   };
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-} else if (process.env.GATSBY_ACTIVE_ENV === "staging" || process.env.GATSBY_ACTIVE_ENV === "development") {
+} else {
   const firebaseConfig = {
     apiKey: "AIzaSyB4_dCRABqokQoG-vBt5jOA4ZEAATervaQ",
     authDomain: "ah-website-staging.firebaseapp.com",
@@ -28,8 +28,5 @@ if (process.env.GATSBY_ACTIVE_ENV === "production") {
   };
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-} else {
-  return null;
 }
-
 export default firebase
