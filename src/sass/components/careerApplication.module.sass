@@ -1,8 +1,7 @@
 @import "../config/vars"
 
 .formContainer
-  background: var(--color-linear-gradient-start, $color-linear-gradient-start)
-  background: linear-gradient(145deg, var(--color-linear-gradient-start, $color-linear-gradient-start) 0%, var(--color-linear-gradient-end, $color-linear-gradient-end) 100%)
+  background: var(--color-secondary-highlight-2, $color-secondary-highlight-2)
   margin-bottom: -80px
   margin-top: 80px
   padding: 128px 16px 160px 16px
@@ -13,11 +12,12 @@
   justify-content: center
   justify-items: center
   .formDesciption
-    max-width: 400px
-    color: var(--color-absolute-white, $color-absolute-white)
+    width: 100%
+    max-width: 800px
+    color: var(--color-typo-emp-1, $color-typo-emp-1)
     p, h3
       color: inherit
-      text-align: center
+      text-align: left
     p
       opacity: 0.6
   form
@@ -31,18 +31,18 @@
       display: grid
       grid-template-columns: 1fr
       grid-gap: 4px
-      color: var(--color-absolute-white, $color-absolute-white)
-      label, input, textarea
+      color: var(--color-typo-emp-1, $color-typo-emp-1)
+      label, input, textarea, select
         color: inherit
-      input, textarea
+      input, textarea, select
         box-sizing: border-box
         overflow: visible
         padding: 16px
-        background: rgba(255, 255, 255, 0.16)
+        background: rgba(255, 255, 255, 0.08)
         border: none
         outline: none
         border-bottom: 1px solid var(--color-absolute-white, $color-absolute-white)
-        caret-color: var(--color-absolute-white, $color-absolute-white)
+        caret-color: var(--color-primary, $color-primary)
         transition: all 0.2s ease-in-out
         appearance: none
         border-radius: 0px
@@ -53,9 +53,9 @@
           background: rgba(255, 255, 255, 0.24)
         &:active, &:focus
           background: rgba(255, 255, 255, 0.16)
-          border-bottom: 2px solid var(--color-absolute-white, $color-absolute-white)
+          border-bottom: 2px solid var(--color-primary, $color-primary)
         &::placeholder
-          color: var(--color-absolute-white, $color-absolute-white)
+          color: var(--color-typo-emp-3, $color-typo-emp-3)
           opacity: 0.6
           font-size: 1rem
           font-weight: regular
@@ -63,8 +63,8 @@
     button
       display: inline
       padding: 16px 24px
-      background: var(--color-absolute-white, $color-absolute-white)
-      color: var(--color-primary, $color-primary)
+      background: var(--color-primary, $color-primary)
+      color: var(--color-absolute-white, $color-absolute-white)
       font-size: 1rem
       font-weight: bold
       appearance: none

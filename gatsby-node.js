@@ -89,31 +89,31 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // Create Career Pages
-  // const authorPages = await graphql(`
-  //   {
-  //     prismic {
-  //       allCareers {
-  //         edges {
-  //           node {
-  //             _meta {
-  //               uid
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const careerPages = await graphql(`
+    {
+      prismic {
+        allCareer_posts {
+          edges {
+            node {
+              _meta {
+                uid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  // const careerTemplate = path.resolve("src/templates/author.js")
-  // const careers = authorPages.data.prismic.allCareers.edges
-  // careers.forEach((edge) => {
-  //   createPage({
-  //     path: `/career/${edge.node._meta.uid}`,
-  //     component: careerTemplate,
-  //     context: {
-  //       uid: edge.node._meta.uid,
-  //     },
-  //   })
-  // })
+  const careerTemplate = path.resolve("src/templates/career.js")
+  const careers = careerPages.data.prismic.allCareer_posts.edges
+  careers.forEach((edge) => {
+    createPage({
+      path: `/careers/${edge.node._meta.uid}`,
+      component: careerTemplate,
+      context: {
+        uid: edge.node._meta.uid,
+      },
+    })
+  })
 }
