@@ -6,7 +6,7 @@ import {RichText} from "prismic-reactjs"
 const CareerApplication = ({positions, currentPosition}) => {
 
   return (
-    <div className={style.formContainer}>
+    <div className={style.careerFormContainer}>
       <div className={style.formDesciption}>
         <h3 className={`h4`}>Submit Application</h3>
         <span className={'headerUnderline'}></span>

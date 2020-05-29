@@ -17,6 +17,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /clipboard/,
             use: loaders.null(),
           },
+          {
+            test: /firebase/,
+            use: loaders.null(),
+          },
         ],
       },
     })

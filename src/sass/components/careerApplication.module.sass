@@ -1,6 +1,6 @@
 @import "../config/vars"
 
-.formContainer
+.careerFormContainer
   background: var(--color-secondary-highlight-2, $color-secondary-highlight-2)
   margin-bottom: -80px
   margin-top: 80px
@@ -38,7 +38,7 @@
         box-sizing: border-box
         overflow: visible
         padding: 16px
-        background: rgba(255, 255, 255, 0.08)
+        background: var(--color-base-2, $color-base-2)
         border: none
         outline: none
         border-bottom: 1px solid var(--color-absolute-white, $color-absolute-white)
@@ -50,9 +50,9 @@
         font-weight: regular
         line-height: normal
         &:hover
-          background: rgba(255, 255, 255, 0.24)
+          background: var(--color-base-1, $color-base-1)
         &:active, &:focus
-          background: rgba(255, 255, 255, 0.16)
+          background: var(--color-base-1, $color-base-1)
           border-bottom: 2px solid var(--color-primary, $color-primary)
         &::placeholder
           color: var(--color-typo-emp-3, $color-typo-emp-3)
