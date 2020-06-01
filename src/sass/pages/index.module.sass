@@ -38,7 +38,11 @@ section.header
   min-height: calc(100vh - 128px)
   display: grid
   grid-template-rows: 1fr 100px
-  grid-row-gap: 32px
+  grid-row-gap: 64px
+  @media screen and ( max-height: 800px )
+    padding-top: 64px
+  @media screen and ( max-height: 700px )
+    padding-top: 32px
  
   .heroImg
     position: absolute !important
@@ -112,6 +116,11 @@ section.header
     padding-top: 32px
 
 @media screen and (max-width: 800px)
+  section.header
+    .headerContent
+      .cta
+        font-size: 16px
+
   section.homePageContent
     h2
       margin-top: 128px

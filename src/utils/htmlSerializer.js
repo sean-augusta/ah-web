@@ -66,6 +66,7 @@ const htmlSerializer = function(type, element, content, children, key) {
         "data-oembed": element.oembed.embed_url,
         "data-oembed-type": element.oembed.type,
         "data-oembed-provider": element.oembed.provider_name,
+        "title": "Content Embed",
       }, 
       element.label ? {className: element.label} : {},
       {className: style.iframeEmbed});

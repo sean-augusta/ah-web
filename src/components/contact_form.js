@@ -39,7 +39,7 @@ function add(event) {
 const ContactFormInline = () => {
 
   return (
-    <div className={style.formContainer}>
+    <div className={style.formContainer} id="contact">
       <div className={style.formDesciption}>
         <h3>Contact Us</h3>
         <p>Let’s discuss how Augusta HiTech can help your business prosper.</p>

@@ -24,7 +24,7 @@ const IndexPage = ({ data }) =>{
       <div className={style.headerContent}>
         <h1 className="h2">{RichText.asText(page.node.title)}</h1>
         <h2 className="h6">{RichText.asText(page.node.subtitle)}</h2>
-        <a className={style.cta} href="#footer">Contact us</a>
+        <a className={style.cta} href="#contact">Contact us</a>
       </div>
       <div className={style.scroll}>
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
