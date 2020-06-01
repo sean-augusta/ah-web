@@ -6,10 +6,11 @@ import SEO from "../components/seo"
 import style from "../sass/pages/subpage.module.sass"
 import { RichText } from 'prismic-reactjs'
 import FullWidthSection from "../components/sections/fullWidthSection"
+import CardNoElevation from "../components/cards/cardNoElevation"
 
 
-const ProductPage = ({ data }) =>{
-  const page = data.prismic.product_page;
+const ServicePage = ({ data }) =>{
+  const page = data.prismic.service_page;
   if(!page) return null;
   return (
   <Layout>
@@ -22,7 +23,7 @@ const ProductPage = ({ data }) =>{
     />
     <section className={style.subpageHeader}>
       <div className={style.headerContent}>
-        <h6 className={`subtitle1`}>Industries</h6>
+        <h6 className={`subtitle1`}>Service</h6>
         <h1 className={`h2`}>{RichText.asText(page.page_name)}</h1>
       </div>
     </section>
@@ -53,16 +54,37 @@ const ProductPage = ({ data }) =>{
         </FullWidthSection>
       )
     })}
+    <section className={`${style.pageContent} ${style.aside}`}>
+      <div>
+        <h3 className={'h4'}>{page.card_list_title}</h3>
+        <span className={'headerUnderline'}></span>
+      </div>
+      <div className={style.cardNoElevationContainer}>
+        {page.card_list_items.map(function (item, index) {
+            return(
+              <CardNoElevation
+                key={index}
+                image={item.card_imageSharp.childImageSharp.fluid}
+                alt={item.card_image.alt}
+                title={item.card_title}
+                body={item.card_description}
+                linkTo={item.see_more} 
+              />
+            )
+          })
+        }
+      </div>
+    </section>
   </Layout>
 )
 }
 
-export default ProductPage
+export default ServicePage
 
 export const query = graphql`
   query ($uid: String!) {
     prismic {
-      product_page(lang: "en-us", uid: $uid) {
+      service_page(lang: "en-us", uid: $uid) {
         _meta {
           uid
         }
@@ -95,6 +117,20 @@ export const query = graphql`
           full_width_section_link
           full_width_section_title
           full_width_section_type
+        }
+        card_list_title
+        card_list_items {
+          card_title
+          card_description
+          card_image
+          card_imageSharp {
+            childImageSharp {
+              fluid  {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          see_more
         }
       }
     }

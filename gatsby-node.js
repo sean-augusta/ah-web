@@ -178,4 +178,33 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Create Service Pages
+  const servicePages = await graphql(`
+    {
+      prismic {
+        allService_pages {
+          edges {
+            node {
+              _meta {
+                uid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const serviceTemplate = path.resolve("src/templates/service.js")
+  const services = servicePages.data.prismic.allService_pages.edges
+  services.forEach((edge) => {
+    createPage({
+      path: `/service/${edge.node._meta.uid}`,
+      component: serviceTemplate,
+      context: {
+        uid: edge.node._meta.uid,
+      },
+    })
+  })
 }

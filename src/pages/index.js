@@ -4,8 +4,6 @@ import Layout from "../components/layouts/layout"
 import Navigation from "../components/navigation/navigation"
 import SEO from "../components/seo"
 import style from "../sass/pages/index.module.sass"
-// import CardInfo from "../components/cards/cardInfo"
-// import CardInfoAndArticles from "../components/cards/cardInfoAndArticles"
 import FullWidthSection from "../components/sections/fullWidthSection"
 import { RichText } from 'prismic-reactjs'
 import Img from "gatsby-image"
