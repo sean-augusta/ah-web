@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/storage'
 import 'firebase/analytics'
 
 if (process.env.GATSBY_ACTIVE_ENV === "production") {

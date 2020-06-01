@@ -34,6 +34,7 @@
       color: var(--color-typo-emp-1, $color-typo-emp-1)
       label, input, textarea, select
         color: inherit
+        cursor: pointer
       input, textarea, select
         box-sizing: border-box
         overflow: visible
@@ -59,7 +60,17 @@
           opacity: 0.6
           font-size: 1rem
           font-weight: regular
-          line-height: normal
+          line-height: normalb
+      input.file
+        appearance: none
+        background: transparent
+        border: 2px solid var(--color-primary, $color-primary)
+        color: var(--color-primary, $color-primary)
+        &::-webkit-file-upload-button
+          // visibility: hidden
+          // width: 0px
+      progress.uploader
+        width: 100%
     button
       display: inline
       padding: 16px 24px
