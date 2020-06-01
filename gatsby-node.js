@@ -120,4 +120,33 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Create Industry Pages
+  const industryPages = await graphql(`
+    {
+      prismic {
+        allIndustry_pages {
+          edges {
+            node {
+              _meta {
+                uid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const industryTemplate = path.resolve("src/templates/industry.js")
+  const industries = industryPages.data.prismic.allIndustry_pages.edges
+  industries.forEach((edge) => {
+    createPage({
+      path: `/industry/${edge.node._meta.uid}`,
+      component: industryTemplate,
+      context: {
+        uid: edge.node._meta.uid,
+      },
+    })
+  })
 }
