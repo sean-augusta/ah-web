@@ -149,4 +149,33 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Create Product Pages
+  const productPages = await graphql(`
+    {
+      prismic {
+        allProduct_pages {
+          edges {
+            node {
+              _meta {
+                uid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const productTemplate = path.resolve("src/templates/product.js")
+  const products = productPages.data.prismic.allProduct_pages.edges
+  products.forEach((edge) => {
+    createPage({
+      path: `/product/${edge.node._meta.uid}`,
+      component: productTemplate,
+      context: {
+        uid: edge.node._meta.uid,
+      },
+    })
+  })
 }

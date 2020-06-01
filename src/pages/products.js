@@ -8,8 +8,8 @@ import FullWidthSection from "../components/sections/fullWidthSection"
 import CardNoElevation from "../components/cards/cardNoElevation"
 import { RichText } from 'prismic-reactjs'
 
-const CompanyPage = ({ data }) =>{
-  const page = data.prismic.allCompanys.edges.slice(0,1).pop();
+const ProductsPage = ({ data }) =>{
+  const page = data.prismic.allProductss.edges.slice(0,1).pop();
   if(!page) return null;
   return (
   <Layout>
@@ -79,12 +79,12 @@ const CompanyPage = ({ data }) =>{
 )
 }
 
-export default CompanyPage
+export default ProductsPage
 
 export const query = graphql`
   {
     prismic {
-      allCompanys {
+      allProductss {
         edges {
           node {
             seo_title
