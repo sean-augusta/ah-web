@@ -11,7 +11,8 @@ function add(event) {
   const phone = document.getElementById("phone").value
   const position = document.getElementById("position").value
   const file = document.getElementById("file").files[0]
-  if (name.length <= 0 || email.length <= 0 || phone.length <= 0 || position.length <= 0 || file.size <= 0) {
+
+  if (name.length <= 0 || email.length <= 0 || phone.length <= 0 || position.length <= 0 || file.size <= 0 || file === "undefined") {
     alert("Failure")
     return
   } else {
@@ -160,13 +161,14 @@ const CareerApplication = ({positions, currentPosition}) => {
           <label
             htmlFor="file"
             className="h6"
-          >Upload Resume</label>
+          >Upload Resume (PDF)</label>
           <input 
             type="file"
             id="file"
             name="file"
             className={style.file}
             data-maxfilesize="10000000"
+            accept="application/pdf"
             required
           />
           <progress 

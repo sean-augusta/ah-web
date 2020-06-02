@@ -66,11 +66,35 @@
         background: transparent
         border: 2px solid var(--color-primary, $color-primary)
         color: var(--color-primary, $color-primary)
+        background-image: url('../../images/cloud_upload-24px.svg')
+        background-repeat: no-repeat
+        background-position: 16px center
+        padding-left: 48px
+        justify-content: center
         &::-webkit-file-upload-button
           // visibility: hidden
-          // width: 0px
+          appearance: none
+          border: none
+          background: none
+          color: var(--color-primary, $color-primary)
+          width: 0px
+          margin: 0px
+          padding: 0px
       progress.uploader
         width: 100%
+        appearance: none
+        height: 8px
+        border-radius: 4px
+        overflow: hidden
+        border: 1px solid var(--color-base-alt-opacity, $color-base-alt-opacity)
+        opacity: 0
+        transition: all ease-in-out $transition-fast
+        &::-webkit-progress-bar
+          background: var(--color-base, $color-base)
+        &::-webkit-progress-value
+          background: var(--color-primary, $color-primary)
+        &.active
+          opacity: 1
     button
       display: inline
       padding: 16px 24px
