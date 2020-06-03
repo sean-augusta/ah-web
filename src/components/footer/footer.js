@@ -6,13 +6,42 @@ import style from "../../sass/components/footer/footer.module.sass"
 const Footer = ({ siteTitle }) => { 
   return (
     <footer className={style.footer} id="footer">
-      <div className={style.newsletter}>
+      <div className={style.newsletter} id="mc_embed_signup">
         <h3>Stay up to date</h3>
         <p className="body1">Sign up for our newsletter to get updates regarding our products, services, and other news.</p>
-        <form>
-          <label htmlFor="email">Email</label>
-          <input className="subtitle1" type="email" name="email" id="email" placeholder="Enter your email"/>
-          <button className="btn">Subscribe</button>
+        <form
+          action="https://augustahitech.us10.list-manage.com/subscribe/post?u=f65b3c87a1ca80d4c9b5f1e6a&amp;id=d22cf6b6f8"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          className="validate"
+          target="_blank"
+          novalidate
+        >
+          <label 
+            htmlFor="mce-EMAIL"
+          >Email</label>
+          <input 
+            className="subtitle1 required email"
+            type="email"
+            name="EMAIL"
+            id="mce-EMAIL"
+            placeholder="Enter your email"
+          />
+          <div id="mce-responses" className="clear">
+            <div className="response" id="mce-error-response" style={{display: `none`}}></div>
+            <div className="response" id="mce-success-response" style={{display: `none`}}></div>
+          </div>
+          {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+          <div style={{position: `absolute`, left: `-5000px`}} aria-hidden="true">
+            <input type="text" name="b_f65b3c87a1ca80d4c9b5f1e6a_d22cf6b6f8" tabindex="-1" value=""/>
+          </div>
+          <button 
+            className="btn"
+            type="submit"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+          >Subscribe</button>
         </form>
       </div>
       <div className={style.locations}>
