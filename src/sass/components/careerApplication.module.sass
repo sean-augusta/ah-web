@@ -34,6 +34,7 @@
       color: var(--color-typo-emp-1, $color-typo-emp-1)
       label, input, textarea, select
         color: inherit
+        cursor: pointer
       input, textarea, select
         box-sizing: border-box
         overflow: visible
@@ -59,7 +60,41 @@
           opacity: 0.6
           font-size: 1rem
           font-weight: regular
-          line-height: normal
+          line-height: normalb
+      input.file
+        appearance: none
+        background: transparent
+        border: 2px solid var(--color-primary, $color-primary)
+        color: var(--color-primary, $color-primary)
+        background-image: url('../../images/cloud_upload-24px.svg')
+        background-repeat: no-repeat
+        background-position: 16px center
+        padding-left: 48px
+        justify-content: center
+        &::-webkit-file-upload-button
+          // visibility: hidden
+          appearance: none
+          border: none
+          background: none
+          color: var(--color-primary, $color-primary)
+          width: 0px
+          margin: 0px
+          padding: 0px
+      progress.uploader
+        width: 100%
+        appearance: none
+        height: 8px
+        border-radius: 4px
+        overflow: hidden
+        border: 1px solid var(--color-base-alt-opacity, $color-base-alt-opacity)
+        opacity: 0
+        transition: all ease-in-out $transition-fast
+        &::-webkit-progress-bar
+          background: var(--color-base, $color-base)
+        &::-webkit-progress-value
+          background: var(--color-primary, $color-primary)
+        &.active
+          opacity: 1
     button
       display: inline
       padding: 16px 24px
