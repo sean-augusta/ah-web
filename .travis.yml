@@ -24,21 +24,22 @@ script:
 
 after_success:
   - echo "Built Successfully"
-  # - firebase use production
-  # - firebase deploy --only hosting --token $FIREBASE_TOKEN
+  - echo "Deploying"
+  - firebase use production
+  - firebase deploy --only hosting --token $FIREBASE_TOKEN
 
 after_failure:
 
 after_script:
 
 before_deploy:
-  - echo "Deploying"
+  # - echo "Deploying"
 
 deploy:
-  provider: firebase
-  token: 
-    secure: $FIREBASE_TOKEN
-  project: production
+  # provider: firebase
+  # token: 
+  #   secure: $FIREBASE_TOKEN
+  # project: production
 
 after_deploy:
   - echo "Deployed Successfully"
