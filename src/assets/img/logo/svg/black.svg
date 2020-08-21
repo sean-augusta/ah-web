@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-SVG_-_Black);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-6 {
+        clip-path: url(#clip-path-3);
+      }
+
+      .cls-7 {
+        clip-path: url(#clip-path-4);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path id="Path_5" data-name="Path 5" class="cls-1" d="M79.8,172.64a12.38,12.38,0,0,1-22.06-7.78,10.74,10.74,0,0,1,2.59-7.52L123.4,72.48A34.41,34.41,0,0,1,150.64,59a33.71,33.71,0,0,1,14.79,3.37,30.3,30.3,0,0,1,11.42,9.34L239.91,156a17.92,17.92,0,0,1,2.59,4,11.18,11.18,0,0,1,1,4.8,12.4,12.4,0,0,1-12.46,12.46,11.61,11.61,0,0,1-9.86-4.93l-60.46-80.7a56.82,56.82,0,0,0-4.54-4.54,7.55,7.55,0,0,0-11.16,0,33.49,33.49,0,0,0-4.28,4.54Z"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_8" data-name="Rectangle 8" class="cls-1" width="302" height="233"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Path_7" data-name="Path 7" d="M134.55,149.29a15.95,15.95,0,1,1,4.67,11.42,15.53,15.53,0,0,1-4.67-11.42"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <rect id="Rectangle_11" data-name="Rectangle 11" width="302" height="233"/>
+    </clipPath>
+    <clipPath id="clip-SVG_-_Black">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="SVG_-_Black" data-name="SVG - Black" class="cls-2">
+    <g id="Light" transform="translate(-25.728 7)">
+      <g id="Group_6" data-name="Group 6" class="cls-3">
+        <g id="Group_5" data-name="Group 5" class="cls-4">
+          <rect id="Rectangle_7" data-name="Rectangle 7" width="195.79" height="128.32" transform="translate(52.75 53.99)"/>
+        </g>
+      </g>
+      <path id="Path_6" data-name="Path 6" class="cls-5" d="M134.55,149.29a15.95,15.95,0,1,1,4.67,11.42,15.53,15.53,0,0,1-4.67-11.42"/>
+      <g id="Group_8" data-name="Group 8" class="cls-6">
+        <rect id="Rectangle_9" data-name="Rectangle 9" width="302" height="233"/>
+        <g id="Group_7" data-name="Group 7" class="cls-7">
+          <rect id="Rectangle_10" data-name="Rectangle 10" width="42.18" height="42.18" transform="translate(129.55 128.2)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
