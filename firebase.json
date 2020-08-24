@@ -5,6 +5,108 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/assets/img/signatures/a/augusta-hitech.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fa%2Faugusta-hitech.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/signatures/a/augusta-design.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fa%2Faugusta-design.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/signatures/a/augusta-dev.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fa%2Faugusta-dev.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/signatures/a/augusta-sales.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fa%2Faugusta-sales.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/signatures/b/augusta-hitech.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fb%2Faugusta-hitech.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/signatures/b/augusta-design.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fb%2Faugusta-design.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/signatures/b/augusta-dev.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fb%2Faugusta-dev.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/signatures/b/augusta-sales.gif",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Fsignature%2Fb%2Faugusta-sales.gif?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/jpg/alt_dark.jpg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fjpg%2Falt_dark.jpg?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/jpg/alt_light.jpg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fjpg%2Falt_light.jpg?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/jpg/black.jpg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fjpg%2Fblack.jpg?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/jpg/white.jpg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fjpg%2Fwhite.jpg?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/png/alt_dark.png",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fpng%2Falt_dark.png?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/png/alt_light.png",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fpng%2Falt_light.png?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/png/black.png",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fpng%2Fblack.png?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/png/white.png",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fpng%2Fwhite.png?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/svg/alt_dark.svg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fsvg%2Falt_dark.svg?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/svg/alt_light.svg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fsvg%2Falt_light.svg?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/svg/black.svg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fsvg%2Fblack.svg?alt=media",
+        "type": "301"
+      },
+      {
+        "source": "/assets/img/logo/svg/white.svg",
+        "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fsvg%2Fwhite.svg?alt=media",
+        "type": "301"
+      }
     ]
   },
   "functions": {
