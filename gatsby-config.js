@@ -12,6 +12,7 @@ module.exports = {
     description: `Experts in blockchain technology solutions, product development, enterprise mobile application development, artificial intelligence, Internet of things for various domains.`,
     author: `@Augusta_Hitech`,
     url: process.env.SITE_URL,
+    siteUrl: process.env.SITE_URL,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -46,6 +47,12 @@ module.exports = {
         // component: require.resolve('./src/templates/newsroom.js'),
         // }],
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,

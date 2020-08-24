@@ -28,6 +28,7 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
 
   const metaDescription = description || site.siteMetadata.description
   const openGraphImage = ogImage || openGraphImageDefault
+  const keywordsFallback = "Blockchain Technology Solutions, Product Development Companies in the USA, Enterprise Mobile App Development Company, Internet of Things, Artificial Intelligence"
 
   return (
     <Helmet
@@ -43,7 +44,7 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
         },
         {
           name: `keywords`,
-          content: keywords,
+          content: keywords || keywordsFallback,
         },
         {
           property: `og:title`,
@@ -88,6 +89,22 @@ function SEO({ description, lang, meta, title, ogImage, keywords }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `theme-color`,
+          content: `#317EFB`,
+        },
+        {
+          name: `msapplication-navbutton-color`,
+          content: `#006FF6`,
+        },
+        {
+          name: `p:domain_verify`,
+          content: `77c275a55a85e410bd6eeb43bd6ca228`,
+        },
+        {
+          name: `google-site-verification`,
+          content: `ghEuegYajkT13xVgIIFOgf5cLgDkoFTmSguZZMEQbSA`,
         },
       ].concat(meta)}
     />
