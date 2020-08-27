@@ -44,8 +44,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
     "deploy-s-functions": "firebase use staging && firebase deploy --only functions",
     "deploy-p-functions": "firebase use production && firebase deploy --only functions",
-    "deploy-s": "gatsby clean && gatsby build && firebase use staging && firebase deploy --only hosting && firebase open hosting:site",
-    "deploy-p": "gatsby clean && gatsby build && firebase use production && firebase deploy --only hosting && firebase open hosting:site"
+    "deploy-s": "gatsby clean && GATSBY_ACTIVE_ENV=staging gatsby build && firebase use staging && firebase deploy --only hosting && firebase open hosting:site",
+    "deploy-p": "gatsby clean && GATSBY_ACTIVE_ENV=production gatsby build && firebase use production && firebase deploy --only hosting && firebase open hosting:site"
   },
   "repository": {
     "type": "git",
