@@ -36,14 +36,17 @@ exports.websiteContactFormSubmission = functions.firestore
           to: "sean.caputo@augustahitech.com",
           cc: "zachary.newton@augustahitech.com",
           subject: "Contact Form Submission",
-          text: 
+          text: `Name: ${name}, Email: ${email}, Workplace: ${workplace}, Message: ${message}`,
+          html: 
             `
-              Name: ${name}
-              Email: ${email}
-              Workplace: ${workplace}
-              Message: ${message}
+              <p>Name: ${name}</p>
+              </br>
+              <p>Email: ${email}</p>
+              </br>
+              <p>Workplace: ${workplace}</p>
+              </br>
+              <p>Message: ${message}</p>
             `,
-          html: `<p>Name: ${name}</p></br><p>Name: ${email}</p></br><p>Name: ${workplace}</p></br><p>Name: ${message}</p></br>`
         });
         console.log("Message sent: %s", info.messageId);
       }
