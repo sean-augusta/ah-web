@@ -15,6 +15,13 @@ module.exports = {
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_CODE,
+        head: true,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
