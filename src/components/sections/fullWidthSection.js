@@ -36,6 +36,20 @@ const FullWidthSection = ({image, imageAlt, title, body, linkTo, type}) => {
         </div>
       </div>
     )
+  } if (type === "Simple-Right") {
+    return (
+      <div className={style.sectionFullWidth + ' ' + style.simpleRight}>
+        <div className={style.sectionBody}>
+          <h3 className="h4">{title}</h3>
+          <span className={'headerUnderline'}></span>
+          {RichText.render(body)}
+          {linkTo ? <Link to={linkTo} className="btn btn-primary-ghost">Read More &#x2794;</Link> : null}
+        </div>
+        <div className={style.imageWrapper}>
+          <Img className={style.image} fluid={image} alt={imageAlt}/>
+        </div>
+      </div>
+    )
   } else {
     return null;
   }
