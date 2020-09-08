@@ -10,12 +10,14 @@
     "firebase": "^7.14.6",
     "gatsby": "^2.21.31",
     "gatsby-image": "^2.4.3",
+    "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-material-ui": "^2.1.8",
     "gatsby-plugin-offline": "^3.0.11",
     "gatsby-plugin-react-helmet": "^3.1.10",
     "gatsby-plugin-sass": "^2.1.17",
     "gatsby-plugin-sharp": "^2.2.27",
+    "gatsby-plugin-sitemap": "^2.4.12",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-source-prismic-graphql": "^3.6.2",
     "gatsby-transformer-sharp": "^2.2.19",
@@ -43,8 +45,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
     "deploy-s-functions": "firebase use staging && firebase deploy --only functions",
     "deploy-p-functions": "firebase use production && firebase deploy --only functions",
-    "deploy-s": "gatsby clean && gatsby build && firebase use staging && firebase deploy --only hosting && firebase open hosting:site",
-    "deploy-p": "gatsby clean && gatsby build && firebase use production && firebase deploy --only hosting && firebase open hosting:site"
+    "deploy-s": "gatsby clean && GATSBY_ACTIVE_ENV=staging gatsby build && firebase use staging && firebase deploy --only hosting && firebase open hosting:site",
+    "deploy-p": "gatsby clean && GATSBY_ACTIVE_ENV=production gatsby build && firebase use production && firebase deploy --only hosting && firebase open hosting:site"
   },
   "repository": {
     "type": "git",

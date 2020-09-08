@@ -143,7 +143,7 @@ const Footer = ({ siteTitle }) => {
             <li><a href="https://www.linkedin.com/company/augusta-hitech-soft-solutions/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://www.facebook.com/augustahitech.us/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
             <li><a href="https://twitter.com/Augusta_Hitech" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-            <li><a href="https://www.youtube.com/channel/UCswMEZnS9ia3-AJfx2_yOTg" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+            {/* <li><a href="https://www.youtube.com/channel/UCswMEZnS9ia3-AJfx2_yOTg" target="_blank" rel="noopener noreferrer">YouTube</a></li> */}
             <li><a href="https://medium.com/@Augusta_Hitech" target="_blank" rel="noopener noreferrer">Medium</a></li>
           </ul>
         </div>

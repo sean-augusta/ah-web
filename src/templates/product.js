@@ -41,16 +41,18 @@ const ProductPage = ({ data }) =>{
     </section>
     {page.full_width_sections.map(function (full_width_section, index) {
       return(
-        <FullWidthSection
-          key={index}
-          type={full_width_section.full_width_section_type}
-          title={full_width_section.full_width_section_title}
-          body={full_width_section.full_width_section_body}
-          image={full_width_section.full_width_section_imageSharp.childImageSharp.fluid}
-          imageAlt={full_width_section.full_width_section_image.alt}
-          linkTo={full_width_section.full_width_section_link}
-        >
-        </FullWidthSection>
+        <section className={style.homePageContent}>
+          <FullWidthSection
+            key={index}
+            type={full_width_section.full_width_section_type}
+            title={full_width_section.full_width_section_title}
+            body={full_width_section.full_width_section_body}
+            image={full_width_section.full_width_section_imageSharp.childImageSharp.fluid}
+            imageAlt={full_width_section.full_width_section_image.alt}
+            linkTo={full_width_section.full_width_section_link}
+          >
+          </FullWidthSection>
+        </section>
       )
     })}
   </Layout>
