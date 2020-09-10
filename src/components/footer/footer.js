@@ -1,4 +1,4 @@
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link, graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import style from "../../sass/components/footer/footer.module.sass"
@@ -16,7 +16,7 @@ const Footer = ({ siteTitle }) => {
           name="mc-embedded-subscribe-form"
           className="validate"
           target="_blank"
-          novalidate
+          noValidate
         >
           <label 
             htmlFor="mce-EMAIL"
@@ -34,7 +34,7 @@ const Footer = ({ siteTitle }) => {
           </div>
           {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
           <div style={{position: `absolute`, left: `-5000px`}} aria-hidden="true">
-            <input type="text" name="b_f65b3c87a1ca80d4c9b5f1e6a_d22cf6b6f8" tabindex="-1" value=""/>
+            <input type="text" name="b_f65b3c87a1ca80d4c9b5f1e6a_d22cf6b6f8" tabIndex="-1" defaultValue=""/>
           </div>
           <button 
             className="btn"

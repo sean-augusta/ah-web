@@ -33,8 +33,10 @@ exports.websiteContactFormSubmission = functions.firestore
         });
         let info = await transporter.sendMail({
           from: `"Augusta HiTech" <admin@augustasoftsol.com>`,
-          to: "zachary.newton@augustahitech.com",
-          // cc: "sean.caputo@augustahitech.com",
+          replyTo: `${email}`,
+          to: "sean.caputo@augustahitech.com, karthik@augustahitech.com",
+          cc: "zachary.newton@augustahitech.com",
+
           subject: "Contact Form Submission",
           text: `Name: ${name}, Email: ${email}, Workplace: ${workplace}, Message: ${message}`,
           html: 
