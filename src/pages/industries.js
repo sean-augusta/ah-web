@@ -59,7 +59,7 @@ const IndustriesPage = ({ data }) =>{
         }
       </div>
     </section>
-    <section className={style.suggestedPosts}>
+    {/* <section className={style.suggestedPosts}>
         <h2 className={`h4`}>Suggested Articles</h2>
         <span className={'headerUnderline'}></span>
         <div className={style.postsContainer}>
@@ -82,7 +82,7 @@ const IndustriesPage = ({ data }) =>{
             title={RichText.asText(page.node.suggested_post_three.post_title)}
           />
         </div>
-      </section>
+      </section> */}
   </Layout>
 )
 }
