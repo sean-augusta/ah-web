@@ -31,35 +31,35 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   // Create Post Pages
-  const newsroomPages = await graphql(`
-    {
-      prismic {
-        allNewsroom_posts(sortBy: meta_firstPublicationDate_DESC) {
-          edges {
-            node {
-              _meta {
-                uid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const newsroomPages = await graphql(`
+  //   {
+  //     prismic {
+  //       allNewsroom_posts(sortBy: meta_firstPublicationDate_DESC) {
+  //         edges {
+  //           node {
+  //             _meta {
+  //               uid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  const newsroomTemplate = path.resolve("src/templates/newsroom.js")
-  const posts = newsroomPages.data.prismic.allNewsroom_posts.edges
-  posts.forEach((edge, index) => {
-    createPage({
-      path: `/newsroom/${edge.node._meta.uid}`,
-      component: newsroomTemplate,
-      context: {
-        uid: edge.node._meta.uid,
-        prev: index === 0 ? null : posts[index - 1],
-        next: index === (posts.length - 1) ? null : posts[index + 1],
-      },
-    })
-  })
+  // const newsroomTemplate = path.resolve("src/templates/newsroom.js")
+  // const posts = newsroomPages.data.prismic.allNewsroom_posts.edges
+  // posts.forEach((edge, index) => {
+  //   createPage({
+  //     path: `/newsroom/${edge.node._meta.uid}`,
+  //     component: newsroomTemplate,
+  //     context: {
+  //       uid: edge.node._meta.uid,
+  //       prev: index === 0 ? null : posts[index - 1],
+  //       next: index === (posts.length - 1) ? null : posts[index + 1],
+  //     },
+  //   })
+  // })
 
   // Create Author Pages
   const authorPages = await graphql(`

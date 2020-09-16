@@ -52,8 +52,23 @@ module.exports = {
         accessToken: 'MC5YcjJVZnhBQUFDZ3p4UTFV.ee-_ve-_ve-_vUhQeXDvv73vv73vv71D77-977-9OD7vv73vv71d77-977-977-9PgcbY0ltJe-_vV3vv70', // (optional API access token)
         path: '/preview', // (optional preview path. Default: /preview)
         previews: false, // (optional, activated Previews. Default: false)
+        pages: [{ // optional
+          type: 'newsroom', // TypeName from prismic
+          match: '/newsroom/:uid', // pages will be generated under this pattern
+          previewPath: '/newsroom', // optional path for unpublished documents
+          component: require.resolve('./src/templates/newsroom.js'),
+          sortBy: 'meta_firstPublicationDate_DESC', // optional, default: meta_lastPublicationDate_ASC; useful for pagination
+        }]
       },
     },
+    // {
+    //   resolve: 'gatsby-source-prismic',
+    //   options: {
+    //     repositoryName: 'ahWeb',
+    //     accessToken: 'MC5YcjJVZnhBQUFDZ3p4UTFV.ee-_ve-_ve-_vUhQeXDvv73vv73vv71D77-977-9OD7vv73vv71d77-977-977-9PgcbY0ltJe-_vV3vv70',
+    //     lang: '*',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

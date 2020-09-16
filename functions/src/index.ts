@@ -41,13 +41,13 @@ exports.websiteContactFormSubmission = functions.firestore
           text: `Name: ${name}, Email: ${email}, Workplace: ${workplace}, Message: ${message}`,
           html: 
             `
-              <p>Name: ${name}</p>
+              <p><b>Name:</b> ${name}</p>
               </br>
-              <p>Email: ${email}</p>
+              <p><b>Email:</b> ${email}</p>
               </br>
-              <p>Workplace: ${workplace}</p>
+              <p><b>Workplace:</b> ${workplace}</p>
               </br>
-              <p>Message: ${message}</p>
+              <p><b>Message:</b> ${message}</p>
             `,
         });
         console.log("Message sent: %s", info.messageId);
