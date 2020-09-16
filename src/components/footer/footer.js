@@ -49,15 +49,15 @@ const Footer = ({ siteTitle }) => {
         <div className={style.locationsWrapper}>
           <div className={style.location}>
             <small className="overline">Florida, U.S.</small>
-            <a className={style.address + " body2"} href="http://maps.google.com/?q=2650%20North%20Military%20Trail%2C%20Suite%20440%20Boca%20Raton%2C%20FL%2033431" target="_blank" rel="noopener noreferrer">2650 North Military Trail, Suite 440 <br/>Boca Raton, FL 33431</a>
+            <a className={style.address + " body2"} href="https://goo.gl/maps/EVL8V1iyvmqiix7dA" target="_blank" rel="noopener noreferrer">2650 North Military Trail, Suite 440 <br/>Boca Raton, FL 33431</a>
           </div>
           <div className={style.location}>
             <small className="overline">Texas, U.S.</small>
-            <a className={style.address + " body2"} href="http://maps.google.com/?q=5700%20Granite%20Parkway%2C%20Suite%20940%2C%20Plano%2C%20TX%2075024" target="_blank" rel="noopener noreferrer">5700 Granite Parkway, Suite 940 <br/>Plano, TX 75024</a>
+            <a className={style.address + " body2"} href="https://goo.gl/maps/ddhpx12BAg9HahCx8" target="_blank" rel="noopener noreferrer">5700 Granite Parkway, Suite 200 <br/>Plano, TX 75024</a>
           </div>
           <div className={style.location}>
             <small className="overline">California, U.S.</small>
-            <a className={style.address + " body2"} href="http://maps.google.com/?q=830%20Hillview%20Ct%20Suite%20270%20Milpitas%2C%20CA%2095035" target="_blank" rel="noopener noreferrer">830 Hillview Ct, Suite 270 <br/>Milpitas, CA 95035</a>
+            <a className={style.address + " body2"} href="https://goo.gl/maps/4o4SrduFsyD5aVVd8" target="_blank" rel="noopener noreferrer">830 Hillview Ct, Suite 270 <br/>Milpitas, CA 95035</a>
           </div>
           {/* <div className={style.location}>
             <small className="overline">Coimbatore, India</small>
