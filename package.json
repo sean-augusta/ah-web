@@ -7,7 +7,7 @@
   "dependencies": {
     "@material-ui/styles": "^4.9.14",
     "clipboard": "^2.0.6",
-    "firebase": "^7.14.6",
+    "firebase": "^7.23.0",
     "gatsby": "^2.21.31",
     "gatsby-image": "^2.4.3",
     "gatsby-plugin-google-analytics": "^2.3.13",
@@ -16,7 +16,7 @@
     "gatsby-plugin-offline": "^3.0.11",
     "gatsby-plugin-react-helmet": "^3.1.10",
     "gatsby-plugin-sass": "^2.1.17",
-    "gatsby-plugin-sharp": "^2.2.27",
+    "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-plugin-sitemap": "^2.4.12",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-source-prismic": "^3.2.1",
