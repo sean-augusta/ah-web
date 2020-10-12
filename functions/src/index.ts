@@ -1,6 +1,12 @@
 import * as functions from "firebase-functions"
 const nodemailer = require('nodemailer')
 
+const mailerHost = `smtp.gmail.com`;
+const mailerAuthUser = `admin@augustasoftsol.com`;
+const mailerAuthPass = `Augusta@2020`;
+const mailerPort = `587`;
+const mailerSecure = false;
+
 exports.websiteContactFormSubmission = functions.firestore
   .document("contact_form/{formId}")
   .onWrite((change, context) => {
@@ -23,12 +29,12 @@ exports.websiteContactFormSubmission = functions.firestore
     } else {
       async function main() {
         const transporter = await nodemailer.createTransport({
-          host: "smtp.gmail.com",
-          port: 587,
-          secure: false,
+          host: mailerHost,
+          port: mailerPort,
+          secure: mailerSecure,
           auth: {
-            user: "admin@augustasoftsol.com",
-            pass: "Augusta@2020",
+            user: mailerAuthUser,
+            pass: mailerAuthPass,
           },
         });
         const info = await transporter.sendMail({
@@ -58,7 +64,7 @@ exports.websiteContactFormSubmission = functions.firestore
   })
 
   exports.websiteCareerFormSubmission = functions.firestore
-  .document("contact_form/{formId}")
+  .document("career_application/{formId}")
   .onWrite((change, context) => {
     const document = change.after.exists ? change.after.data() : null
 
@@ -80,12 +86,12 @@ exports.websiteContactFormSubmission = functions.firestore
     } else {
       async function main() {
         const transporter = await nodemailer.createTransport({
-          host: "smtp.gmail.com",
-          port: 587,
-          secure: false,
+          host: mailerHost,
+          port: mailerPort,
+          secure: mailerSecure,
           auth: {
-            user: "admin@augustasoftsol.com",
-            pass: "Augusta@2020",
+            user: mailerAuthUser,
+            pass: mailerAuthPass,
           },
         });
         const info = await transporter.sendMail({
