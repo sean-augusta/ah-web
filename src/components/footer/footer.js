@@ -49,14 +49,20 @@ const Footer = ({ siteTitle }) => {
         <div className={style.locationsWrapper}>
           <div className={style.location}>
             <small className="overline">Florida, U.S.</small>
+            <br/>
+            <a className="body2" href="tel:8669621010">(866) 962-1010</a>
             <a className={style.address + " body2"} href="https://goo.gl/maps/EVL8V1iyvmqiix7dA" target="_blank" rel="noopener noreferrer">2650 North Military Trail, Suite 440 <br/>Boca Raton, FL 33431</a>
           </div>
           <div className={style.location}>
             <small className="overline">Texas, U.S.</small>
+            <br/>
+            <a className="body2" href="tel:8669621010">(866) 962-1010</a>
             <a className={style.address + " body2"} href="https://goo.gl/maps/ddhpx12BAg9HahCx8" target="_blank" rel="noopener noreferrer">5700 Granite Parkway, Suite 200 <br/>Plano, TX 75024</a>
           </div>
           <div className={style.location}>
             <small className="overline">California, U.S.</small>
+            <br/>
+            <a className="body2" href="tel:8669621010">(866) 962-1010</a>
             <a className={style.address + " body2"} href="https://goo.gl/maps/4o4SrduFsyD5aVVd8" target="_blank" rel="noopener noreferrer">830 Hillview Ct, Suite 270 <br/>Milpitas, CA 95035</a>
           </div>
           {/* <div className={style.location}>
