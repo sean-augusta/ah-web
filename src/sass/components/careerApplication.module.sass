@@ -82,13 +82,13 @@
           padding: 0px
       progress.uploader
         width: 100%
-        appearance: none
+        // appearance: none
         height: 8px
         border-radius: 4px
         overflow: hidden
-        border: 1px solid var(--color-base-alt-opacity, $color-base-alt-opacity)
+        border: 1px solid var(--color-primary, $color-primary)
         opacity: 0
-        transition: all ease-in-out $transition-fast
+        transition: opacity $transition-medium
         &::-webkit-progress-bar
           background: var(--color-base, $color-base)
         &::-webkit-progress-value

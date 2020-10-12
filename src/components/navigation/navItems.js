@@ -35,9 +35,9 @@ const NavItems = () => (
       <ul className={moreNavItemsStyle.moreNavItems} id="moreNavItems">
         <li className={moreNavItemsStyle.navItem}><Link to="/company" className={'btn'} activeClassName={style.activeNav}>Company</Link></li>
         {/* <li className={moreNavItemsStyle.navItem}><Link to="/newsroom" className={'btn'} activeClassName={style.activeNav}>Newsroom</Link></li> */}
-        {/* <li className={moreNavItemsStyle.navItem}><Link to="/careers" className={'btn'} activeClassName={style.activeNav}>Careers</Link></li> */}
+        <li className={moreNavItemsStyle.navItem}><Link to="/careers" className={'btn'} activeClassName={style.activeNav}>Careers</Link></li>
         <li className={moreNavItemsStyle.navItem}><a href="https://old.augustasoftsol.com/newsroom.html" target="_blank" rel="noreferrer" className={'btn'}>Newsroom</a></li>
-        <li className={moreNavItemsStyle.navItem}><a href="https://old.augustasoftsol.com/company/careers.html" target="_blank" rel="noreferrer" className={'btn'}>Careers</a></li>
+        {/* <li className={moreNavItemsStyle.navItem}><a href="https://old.augustasoftsol.com/company/careers.html" target="_blank" rel="noreferrer" className={'btn'}>Careers</a></li> */}
       </ul>
     </li>
     {/* <li><Link to="/" className="btn btn-primary">Contact Us</Link></li> */}
