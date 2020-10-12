@@ -41,7 +41,7 @@ const CareersPage = ({ data }) =>{
                 title={RichText.asText(edge.node.title)}
                 subtitle={`${edge.node.position_type} • ${edge.node.position_location}`}
                 linkTo={`/careers/${edge.node._meta.uid}`} 
-                body={RichText.asText(edge.node.duties_and_responsibilities)}
+                body={RichText.asText(edge.node.duties_and_responsibilities).substring(0,236) + `...`}
               />
             )
           })
