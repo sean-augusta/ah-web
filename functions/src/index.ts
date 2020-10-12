@@ -100,7 +100,7 @@ exports.websiteContactFormSubmission = functions.firestore
           to: "sean.caputo@augustahitech.com, karthik@augustahitech.com",
           cc: "zachary.newton@augustahitech.com",
 
-          subject: "Contact Form Submission",
+          subject: "Career Form Submission",
           text: `Name: ${name}, Email: ${email}, Phone: ${phone}, Position: ${position}, File: ${file}`,
           html: 
             `
@@ -116,7 +116,7 @@ exports.websiteContactFormSubmission = functions.firestore
             `,
             attachments: [
             {
-              // filename: `resume.pdf`,
+              filename: `${name} resume.pdf`,
               path: `${file}`,
             }
           ],
