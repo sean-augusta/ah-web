@@ -22,6 +22,9 @@ function add(event) {
     // Get Progress Bar
     const uploader = document.getElementById("uploader")
 
+    // Show Progress Bar
+    uploader.classList.add(`${style.active}`);
+
     // Create a storage Reference
     const storageRef = firebase.storage().ref(`career_application_documents/${email}/${file.name}`)
 
@@ -38,6 +41,8 @@ function add(event) {
       return null
     },
     function complete() {
+      // Hide Progress Bar
+      uploader.classList.remove(`${style.active}`);
       updateDB()
     })
 
