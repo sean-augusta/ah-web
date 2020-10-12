@@ -97,9 +97,8 @@ exports.websiteContactFormSubmission = functions.firestore
         const info = await transporter.sendMail({
           from: `"Augusta HiTech" <admin@augustasoftsol.com>`,
           replyTo: `${email}`,
-          to: "zachary.newton@augustahitech.com",
-          // to: "sean.caputo@augustahitech.com, karthik@augustahitech.com",
-          // cc: "zachary.newton@augustahitech.com",
+          to: "sean.caputo@augustahitech.com, karthik@augustahitech.com",
+          cc: "zachary.newton@augustahitech.com",
 
           subject: "Contact Form Submission",
           text: `Name: ${name}, Email: ${email}, Phone: ${phone}, Position: ${position}, File: ${file}`,
