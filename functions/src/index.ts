@@ -114,6 +114,12 @@ exports.websiteContactFormSubmission = functions.firestore
               </br>
               <p>File: ${file}</p>
             `,
+            attachments: [
+            {
+              // filename: `resume.pdf`,
+              path: `${file}`,
+            }
+          ],
         });
         console.log("Message sent: %s", info.messageId);
       }
