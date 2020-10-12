@@ -77,7 +77,7 @@ export const query = graphql`
           }
         }
       }
-      allCareer_posts {
+      allCareer_posts (sortBy: title_ASC) {
         edges {
           node {
             page_name
