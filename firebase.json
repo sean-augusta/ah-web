@@ -106,6 +106,16 @@
         "source": "/assets/img/logo/svg/white.svg",
         "destination": "https://firebasestorage.googleapis.com/v0/b/augusta-hitech-website.appspot.com/o/web_assets%2Flogo%2Fsvg%2Fwhite.svg?alt=media",
         "type": "301"
+      },
+      {
+        "source": "/services/product-development-company.html",
+        "destination": "/services",
+        "type": "301"
+      },
+      {
+        "source": "/company/careers.html",
+        "destination": "/careers",
+        "type": "301"
       }
     ]
   },
