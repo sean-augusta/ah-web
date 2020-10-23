@@ -78,6 +78,7 @@ module.exports = {
       options: {
         dsn: process.env.SENTRY_IO_DSN,
         sampleRate: 0.7,
+        environment: process.env.ENVIRONMENT_NAME,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
