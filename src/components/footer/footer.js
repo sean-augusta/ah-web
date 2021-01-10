@@ -157,7 +157,7 @@ const Footer = ({ siteTitle }) => {
       />
       
       <div className={style.copyright}>
-        <p>&copy; 2020 Augusta HiTech | by Augusta Design</p>
+        <p>&copy; 2021 Augusta HiTech | by Augusta Design</p>
       </div>
     </footer>
   )
