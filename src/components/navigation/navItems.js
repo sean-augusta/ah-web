@@ -25,7 +25,7 @@ function mobileNavToggleMore(event) {
 const NavItems = () => (
   <>
     <li><Link to="/innovation" className="btn" activeClassName={style.activeNav}>Innovation</Link></li>
-    <li><Link to="/products" className="btn" activeClassName={style.activeNav}>Products</Link></li>
+    {/* <li><Link to="/products" className="btn" activeClassName={style.activeNav}>Products</Link></li> */}
     <li><Link to="/services" className="btn" activeClassName={style.activeNav}>Services</Link></li>
     <li><Link to="/industries" className="btn" activeClassName={style.activeNav}>Industries</Link></li>
     <li>
